@@ -1,0 +1,42 @@
+title: 企业官网示例
+description: 一个可在 GitHub Pages 上部署的 Jekyll 静态企业网站，支持 10 套风格切换
+url: "" # 部署到 GitHub Pages 后可填入 https://username.github.io/repo
+baseurl: "" # 若使用项目页，填入 /repo-name
+lang: zh-CN
+theme: null
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 主题选择（只需改这个数字 1-10 即可切换风格）
+# 1 classic，2 modern，3 dark，4 light，5 corporate，6 playful，7 elegant，8 tech，9 minimal，10 vintage
+theme_index: 1
+# 若设为 true，将强制以 theme_index 为准，忽略 URL 参数与下拉菜单
+lock_theme_from_config: true
+
+# 站点基础信息
+company:
+  name: 星云科技有限公司
+  slogan: 创新驱动，价值共创
+  phone: 400-123-4567
+  email: hello@example.com
+  address: 上海市浦东新区示例路88号
+
+# 导航配置
+collections:
+  pages:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# 构建忽略
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+  - package.json
+  - package-lock.json

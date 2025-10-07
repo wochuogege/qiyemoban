@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h4>联系我们</h4>
+      <p>电话：{{ site.company.phone }}<br>邮箱：{{ site.company.email }}</p>
+      <p>地址：{{ site.company.address }}</p>
+    </div>
+    <div>
+      <h4>快速链接</h4>
+      <ul>
+        {% for item in site.data.navigation %}
+        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h4>订阅最新资讯</h4>
+      <form action="#" onsubmit="event.preventDefault(); alert('感谢订阅！');">
+        <input type="email" placeholder="输入邮箱" required>
+        <button type="submit" class="btn">订阅</button>
+      </form>
+    </div>
+  </div>
+  <div class="copyright">
+    © {{ site.time | date: '%Y' }} {{ site.company.name }} · 保留所有权利
+  </div>
+</footer>

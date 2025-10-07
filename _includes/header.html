@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="topbar">
+    <div class="brand">
+      <a href="{{ '/' | relative_url }}" class="logo">{{ site.company.name }}</a>
+      <span class="slogan">{{ site.company.slogan }}</span>
+    </div>
+    {% include theme-switcher.html %}
+  </div>
+  <nav class="navbar">
+    <button class="nav-toggle" aria-label="打开菜单">☰</button>
+    <ul class="nav-links">
+      {% for item in site.data.navigation %}
+      <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  }
+});
+</script>
