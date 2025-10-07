@@ -21,7 +21,7 @@ class ThemeManager {
   constructor() {
     this.currentTheme = null;
     this.themeStylesheet = null;
-    this.init();
+    // 不要在构造函数中调用init，让外部显式调用
   }
 
   // 初始化主题管理器
@@ -51,18 +51,21 @@ class ThemeManager {
 
   // 设置主题样式表
   setupThemeStylesheet() {
-    // 移除可能存在的旧主题样式表
-    if (this.themeStylesheet) {
-      this.themeStylesheet.remove();
+    // 查找现有的主题样式表
+    let themeStylesheet = document.getElementById('theme-style');
+    
+    if (!themeStylesheet) {
+      // 如果不存在，创建新的主题样式表链接
+      themeStylesheet = document.createElement('link');
+      themeStylesheet.id = 'theme-style';
+      themeStylesheet.rel = 'stylesheet';
+      document.head.appendChild(themeStylesheet);
     }
-
-    // 创建新的主题样式表链接
-    this.themeStylesheet = document.createElement('link');
-    this.themeStylesheet.id = 'theme-stylesheet';
-    this.themeStylesheet.rel = 'stylesheet';
-    this.themeStylesheet.href = `/assets/themes/theme-${this.currentTheme}.css`;
-    document.head.appendChild(this.themeStylesheet);
-
+    
+    // 更新样式表的href，使用站点基础路径
+    const baseUrl = typeof site !== 'undefined' ? site.baseurl || '' : '';
+    themeStylesheet.href = `${baseUrl}/assets/themes/theme-${this.currentTheme}.css?ver=${Date.now()}`;
+    
     // 更新body的主题类
     this.updateBodyThemeClass();
   }
@@ -206,6 +209,7 @@ class ThemeManager {
 window.addEventListener('DOMContentLoaded', () => {
   // 初始化主题管理器
   window.themeManager = new ThemeManager();
+  window.themeManager.init();
 
   // 添加主题切换通知的样式
   const style = document.createElement('style');

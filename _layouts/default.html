@@ -12,11 +12,11 @@
   <!-- 引入Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   
-  <!-- 引入主样式文件 -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-  
   <!-- 引入默认主题样式文件 -->
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/themes/theme-default.css" id="theme-style">
+  
+  <!-- 引入主样式文件 -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
   
   <!-- 网站图标 -->
   <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico" type="image/x-icon">
@@ -60,32 +60,36 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   
+  <!-- 页面脚本 -->
+  <script>
+    // 从Jekyll配置获取默认主题设置
+    // 这个全局变量会被theme-switcher.js中的ThemeManager使用
+    window.themeStyle = '{{ site.theme_style }}';
+  </script>
+  
   <!-- 引入主题切换器JS -->
   <script src="{{ site.baseurl }}/assets/js/theme-switcher.js"></script>
   
   <!-- 引入主JS文件 -->
   <script src="{{ site.baseurl }}/assets/js/main.js"></script>
   
-  <!-- 页面脚本 -->
-  <script>
-    // 页面加载完成后执行
-    document.addEventListener('DOMContentLoaded', function() {
-      // 从Jekyll配置获取默认主题设置
-      window.themeStyle = '{{ site.theme_style }}';
-      
-      // 初始化主题切换器
-      if (typeof ThemeManager !== 'undefined') {
-        const themeManager = new ThemeManager();
-        themeManager.init();
-      }
-    });
-  </script>
-  
   <!-- 页面特定的JS（如果有） -->
-  {% if page.custom_js %}
-    {% for js in page.custom_js %}
-      <script src="{{ site.baseurl }}/assets/js/{{ js }}"></script>
-    {% endfor %}
-  {% endif %}
-</body>
+    {% if page.custom_js %}
+      {% for js in page.custom_js %}
+        <script src="{{ site.baseurl }}/assets/js/{{ js }}"></script>
+      {% endfor %}
+    {% endif %}
+    
+    <!-- 确保主题管理器正确初始化 -->
+    <script>
+      // 确保在DOM完全加载后初始化主题管理器
+      document.addEventListener('DOMContentLoaded', function() {
+        // 如果window.themeManager已存在，确保它被正确初始化
+        if (window.themeManager && typeof window.themeManager.init === 'function') {
+          // 重新初始化以应用正确的主题
+          window.themeManager.init();
+        }
+      });
+    </script>
+  </body>
 </html>

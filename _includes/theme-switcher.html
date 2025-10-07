@@ -12,7 +12,7 @@
     </div>
     <div class="theme-grid">
       {% for theme in site.available_themes %}
-      <div class="theme-item" data-theme="{{ theme.id }}" {% if theme.id == site.theme_style %}class="theme-item active"{% endif %}>
+      <div class="theme-item {% if theme.id == site.theme_style %}active{% endif %}" data-theme="{{ theme.id }}">
         <div class="theme-preview {{ theme.id }}-preview"></div>
         <span class="theme-name">{{ theme.name }}</span>
       </div>
