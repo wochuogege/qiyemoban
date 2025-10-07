@@ -34,7 +34,7 @@ paginate_path: "/blog/page:num/"
 # 10: retro - 复古风格
 # 11: warm - 温暖柔和
 # 12: dark - 暗黑模式
-theme_style: business
+theme_style: nature
 
 # 可用主题列表 - 用于主题切换器
 available_themes:
