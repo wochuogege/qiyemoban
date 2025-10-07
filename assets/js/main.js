@@ -119,7 +119,7 @@ function init() {
   }
   
   // 绑定语言切换按钮事件
-  const langButton = document.querySelector('.lang-btn');
+  const langButton = document.getElementById('lang-toggle') || document.querySelector('.lang-btn');
   if (langButton) {
     langButton.addEventListener('click', switchLanguage);
   }

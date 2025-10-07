@@ -3,6 +3,7 @@ title: 公司名称
 email: contact@example.com
 description: >-
   公司网站描述
+# 确保baseurl为空，避免GitHub Pages自动添加仓库名前缀
 baseurl: ""
 url: "https://example.github.io" # 生产环境URL
 
@@ -13,6 +14,9 @@ languages:
 
 # 默认语言
 default_lang: zh
+
+# 禁用URL前缀，避免自动添加仓库名
+lang_from_path: false
 
 # 多语言名称
 lang_names:

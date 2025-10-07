@@ -9,45 +9,23 @@
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   <!-- 引入Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <!-- 语言切换 -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const langToggle = document.getElementById('lang-toggle');
-      if (langToggle) {
-        langToggle.addEventListener('click', function() {
-          const currentLang = document.documentElement.lang;
-          const targetLang = currentLang === 'zh' ? 'en' : 'zh';
-          const currentPath = window.location.pathname;
-          let newPath = currentPath;
-          
-          // 处理语言前缀
-          if (currentLang === 'zh' && !newPath.startsWith('/en/')) {
-            newPath = '/en' + (newPath === '/' ? '' : newPath);
-          } else if (currentLang === 'en' && newPath.startsWith('/en/')) {
-            newPath = newPath.replace('/en', '');
-          }
-          
-          window.location.href = newPath;
-        });
-      }
-    });
-  </script>
+  <!-- 语言切换功能由main.js提供 -->
 </head>
 <body>
   <!-- 导航栏 -->
   <header>
     <nav class="navbar">
       <div class="container">
-        <a href="{{ "/" | relative_url }}" class="logo">{{ site.title }}</a>
+        <a href="/" class="logo">{{ site.title }}</a>
         
         <!-- 桌面端菜单 -->
         <div class="nav-menu">
           <ul>
-            <li><a href="{{ "/" | relative_url }}">{{ site.data.translations.nav.home }}</a></li>
-            <li><a href="{{ "/about/" | relative_url }}">{{ site.data.translations.nav.about }}</a></li>
-            <li><a href="{{ "/products/" | relative_url }}">{{ site.data.translations.nav.products }}</a></li>
-            <li><a href="{{ "/services/" | relative_url }}">{{ site.data.translations.nav.services }}</a></li>
-            <li><a href="{{ "/contact/" | relative_url }}">{{ site.data.translations.nav.contact }}</a></li>
+            <li><a href="/">{% if site.data.translations.nav.home %}{{ site.data.translations.nav.home }}{% else %}首页{% endif %}</a></li>
+            <li><a href="/about/">{% if site.data.translations.nav.about %}{{ site.data.translations.nav.about }}{% else %}关于我们{% endif %}</a></li>
+            <li><a href="/products/">{% if site.data.translations.nav.products %}{{ site.data.translations.nav.products }}{% else %}产品{% endif %}</a></li>
+            <li><a href="/services/">{% if site.data.translations.nav.services %}{{ site.data.translations.nav.services }}{% else %}服务{% endif %}</a></li>
+            <li><a href="/contact/">{% if site.data.translations.nav.contact %}{{ site.data.translations.nav.contact }}{% else %}联系我们{% endif %}</a></li>
           </ul>
         </div>
         
@@ -68,11 +46,11 @@
     <!-- 移动端菜单 -->
     <div class="mobile-menu" id="mobile-menu">
       <ul>
-        <li><a href="{{ "/" | relative_url }}">{{ site.data.translations.nav.home }}</a></li>
-        <li><a href="{{ "/about/" | relative_url }}">{{ site.data.translations.nav.about }}</a></li>
-        <li><a href="{{ "/products/" | relative_url }}">{{ site.data.translations.nav.products }}</a></li>
-        <li><a href="{{ "/services/" | relative_url }}">{{ site.data.translations.nav.services }}</a></li>
-        <li><a href="{{ "/contact/" | relative_url }}">{{ site.data.translations.nav.contact }}</a></li>
+        <li><a href="/">{% if site.data.translations.nav.home %}{{ site.data.translations.nav.home }}{% else %}首页{% endif %}</a></li>
+        <li><a href="/about/">{% if site.data.translations.nav.about %}{{ site.data.translations.nav.about }}{% else %}关于我们{% endif %}</a></li>
+        <li><a href="/products/">{% if site.data.translations.nav.products %}{{ site.data.translations.nav.products }}{% else %}产品{% endif %}</a></li>
+        <li><a href="/services/">{% if site.data.translations.nav.services %}{{ site.data.translations.nav.services }}{% else %}服务{% endif %}</a></li>
+        <li><a href="/contact/">{% if site.data.translations.nav.contact %}{{ site.data.translations.nav.contact }}{% else %}联系我们{% endif %}</a></li>
       </ul>
     </div>
   </header>
@@ -93,9 +71,9 @@
         <div class="footer-col">
           <h4>{{ site.data.translations.nav.products }}</h4>
           <ul>
-            <li><a href="{{ "/products/" | relative_url }}">{{ site.data.translations.products.product1.title }}</a></li>
-            <li><a href="{{ "/products/" | relative_url }}">{{ site.data.translations.products.product2.title }}</a></li>
-            <li><a href="{{ "/products/" | relative_url }}">{{ site.data.translations.products.product3.title }}</a></li>
+            <li><a href="/products/">{{ site.data.translations.products.product1.title }}</a></li>
+            <li><a href="/products/">{{ site.data.translations.products.product2.title }}</a></li>
+            <li><a href="/products/">{{ site.data.translations.products.product3.title }}</a></li>
           </ul>
         </div>
         <div class="footer-col">
