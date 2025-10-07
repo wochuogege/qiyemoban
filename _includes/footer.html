@@ -19,8 +19,8 @@
       <div class="footer-nav">
         <h4 class="footer-title">快速导航</h4>
         <ul class="footer-links">
-          {% if site.navigation %}
-            {% for item in site.navigation %}
+          {% if site.menu %}
+            {% for item in site.menu %}
               <li><a href="{{ item.url }}">{{ item.title }}</a></li>
             {% endfor %}
           {% else %}

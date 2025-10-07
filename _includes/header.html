@@ -17,7 +17,7 @@
       <!-- 主导航菜单 -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          {% for item in site.navigation %}
+          {% for item in site.menu %}
             <li class="nav-item {% if page.url == item.url %}active{% endif %}">
               <a class="nav-link" href="{{ item.url }}">{{ item.title }}
                 {% if item.dropdown %}
