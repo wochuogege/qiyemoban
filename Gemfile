@@ -23,8 +23,3 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 group :development, :test do
   gem "webrick"
 end
-
-# 仅在生产环境使用
-group :production do
-  gem "github-pages", group: :jekyll_plugins
-end
