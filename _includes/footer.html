@@ -1,0 +1,510 @@
+<footer class="site-footer">
+  <div class="container">
+    <!-- 主要页脚内容 -->
+    <div class="footer-main">
+      <!-- 公司信息 -->
+      <div class="footer-about">
+        <div class="footer-logo">
+          {% if site.logo %}
+          <img src="{{ site.logo }}" alt="{{ site.title }}">
+          {% else %}
+          <h3>{{ site.title }}</h3>
+          {% endif %}
+        </div>
+        <p class="footer-description">{{ site.description }}</p>
+        <p class="footer-tagline">{{ site.tagline | default: '专业的解决方案提供商' }}</p>
+      </div>
+      
+      <!-- 导航链接 -->
+      <div class="footer-nav">
+        <h4 class="footer-title">快速导航</h4>
+        <ul class="footer-links">
+          {% if site.navigation %}
+            {% for item in site.navigation %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          {% else %}
+            <li><a href="/">首页</a></li>
+            <li><a href="/about.html">关于我们</a></li>
+            <li><a href="/services.html">服务</a></li>
+            <li><a href="/products.html">产品</a></li>
+            <li><a href="/blog.html">博客</a></li>
+            <li><a href="/contact.html">联系我们</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      
+      <!-- 服务分类 -->
+      <div class="footer-services">
+        <h4 class="footer-title">我们的服务</h4>
+        <ul class="footer-links">
+          {% if site.services %}
+            {% for service in site.services %}
+              <li><a href="#">{{ service.title }}</a></li>
+            {% endfor %}
+          {% else %}
+            <li><a href="#">网站开发</a></li>
+            <li><a href="#">移动应用开发</a></li>
+            <li><a href="#">创意设计</a></li>
+            <li><a href="#">SEO优化</a></li>
+            <li><a href="#">数字营销</a></li>
+            <li><a href="#">技术咨询</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      
+      <!-- 联系信息 -->
+      <div class="footer-contact">
+        <h4 class="footer-title">联系我们</h4>
+        <ul class="contact-info">
+          <li class="contact-item">
+            <i class="fas fa-map-marker-alt contact-icon"></i>
+            <span>{{ site.address | default: '中国北京市朝阳区建国路88号' }}</span>
+          </li>
+          <li class="contact-item">
+            <i class="fas fa-phone contact-icon"></i>
+            <span>{{ site.phone | default: '400-123-4567' }}</span>
+          </li>
+          <li class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <a href="mailto:{{ site.email | default: 'contact@example.com' }}">{{ site.email | default: 'contact@example.com' }}</a>
+          </li>
+          <li class="contact-item">
+            <i class="fas fa-clock contact-icon"></i>
+            <span>{{ site.business_hours | default: '周一至周五 9:00-18:00' }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 社交媒体和订阅区域 -->
+    <div class="footer-middle">
+      <div class="footer-social">
+        <h4 class="footer-title">关注我们</h4>
+        <div class="social-links">
+          {% if site.social_links %}
+            {% for social in site.social_links %}
+            <a href="{{ social.url }}" target="_blank" class="social-link" aria-label="{{ social.title }}">
+              <i class="fab fa-{{ social.icon }}"></i>
+            </a>
+            {% endfor %}
+          {% else %}
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="footer-newsletter">
+        <h4 class="footer-title">订阅通讯</h4>
+        <form action="#" class="newsletter-form">
+          <input type="email" placeholder="您的邮箱地址" required>
+          <button type="submit" class="newsletter-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+        <p class="newsletter-text">订阅我们的通讯，获取最新动态和优惠信息</p>
+      </div>
+    </div>
+    
+    <!-- 底部版权信息 -->
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name | default: site.title }}. 保留所有权利。</p>
+      </div>
+      
+      <div class="footer-terms">
+        <ul class="terms-links">
+          <li><a href="#">隐私政策</a></li>
+          <li><a href="#">服务条款</a></li>
+          <li><a href="#">Cookie政策</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 返回顶部按钮会通过JavaScript动态插入 -->
+</footer>
+
+<style>
+/* 页脚基础样式 */
+.site-footer {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 4rem 0 2rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+/* 主要内容区域 */
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* 公司信息 */
+.footer-about .footer-logo {
+  margin-bottom: 1.5rem;
+}
+
+.footer-about .footer-logo img {
+  max-width: 180px;
+  height: auto;
+}
+
+.footer-description {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.footer-tagline {
+  font-weight: 600;
+  color: #007bff;
+  font-size: 1rem;
+}
+
+/* 页脚标题 */
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #007bff;
+}
+
+/* 链接样式 */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #007bff;
+  transform: translateX(5px);
+}
+
+/* 联系信息 */
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.contact-icon {
+  font-size: 1.1rem;
+  color: #007bff;
+  margin-right: 0.8rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+.contact-item span, .contact-item a {
+  color: #555;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: #007bff;
+}
+
+/* 中间区域 */
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* 社交媒体 */
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #eaeaea;
+}
+
+.social-link:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* 订阅表单 */
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.newsletter-form input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.newsletter-form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.newsletter-btn {
+  padding: 0.8rem 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-btn:hover {
+  background-color: #0056b3;
+}
+
+.newsletter-text {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+/* 底部版权区域 */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright p {
+  margin: 0;
+  color: #666;
+}
+
+.terms-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.terms-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.terms-links a:hover {
+  color: #007bff;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-middle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .terms-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-form input {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .site-footer {
+    padding: 2.5rem 0 1rem;
+  }
+  
+  .social-links {
+    flex-wrap: wrap;
+  }
+  
+  .footer-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* 暗黑模式样式 */
+body.theme-dark .site-footer {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+body.theme-dark .footer-description {
+  color: #b0b0b0;
+}
+
+body.theme-dark .footer-tagline {
+  color: #6c5ce7;
+}
+
+body.theme-dark .footer-title::after {
+  background-color: #6c5ce7;
+}
+
+body.theme-dark .footer-links a {
+  color: #b0b0b0;
+}
+
+body.theme-dark .footer-links a:hover {
+  color: #6c5ce7;
+}
+
+body.theme-dark .contact-item span, 
+body.theme-dark .contact-item a {
+  color: #b0b0b0;
+}
+
+body.theme-dark .contact-item a:hover {
+  color: #6c5ce7;
+}
+
+body.theme-dark .contact-icon {
+  color: #6c5ce7;
+}
+
+body.theme-dark .footer-middle {
+  border-color: #333;
+}
+
+body.theme-dark .social-link {
+  background-color: #2a2a2a;
+  color: #6c5ce7;
+  border-color: #333;
+}
+
+body.theme-dark .social-link:hover {
+  background-color: #6c5ce7;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+}
+
+body.theme-dark .newsletter-form input {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.theme-dark .newsletter-form input:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.25);
+}
+
+body.theme-dark .newsletter-btn {
+  background-color: #6c5ce7;
+}
+
+body.theme-dark .newsletter-btn:hover {
+  background-color: #5f3dc4;
+}
+
+body.theme-dark .newsletter-text {
+  color: #888;
+}
+
+body.theme-dark .footer-bottom {
+  border-color: #333;
+}
+
+body.theme-dark .footer-copyright p {
+  color: #888;
+}
+
+body.theme-dark .terms-links a {
+  color: #888;
+}
+
+body.theme-dark .terms-links a:hover {
+  color: #6c5ce7;
+}
+</style>

@@ -1,0 +1,389 @@
+<header class="header fixed-top">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <!-- 品牌标志 -->
+      <a class="navbar-brand" href="{{ site.baseurl }}/">
+        {% if site.logo %}
+        <img src="{{ site.logo }}" alt="{{ site.title }}" class="logo">
+        {% endif %}
+        <h1>{{ site.title }}</h1>
+      </a>
+      
+      <!-- 移动端菜单切换按钮 -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- 主导航菜单 -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          {% for item in site.navigation %}
+            <li class="nav-item {% if page.url == item.url %}active{% endif %}">
+              <a class="nav-link" href="{{ item.url }}">{{ item.title }}
+                {% if item.dropdown %}
+                <i class="fas fa-chevron-down ml-1"></i>
+                {% endif %}
+              </a>
+              
+              <!-- 下拉菜单 -->
+              {% if item.dropdown %}
+              <ul class="dropdown-menu">
+                {% for subitem in item.dropdown %}
+                  <li><a class="dropdown-item" href="{{ subitem.url }}">{{ subitem.title }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      
+      <!-- 主题切换器按钮 -->
+      <button class="theme-switcher-toggle" aria-label="切换主题">
+        <i class="fas fa-palette"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- 头部导航样式 -->
+<style>
+  .header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+  
+  /* 滚动时的头部样式变化 */
+  .header.scrolled {
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .navbar {
+    padding: 0;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .navbar-brand .logo {
+    margin-right: 0.5rem;
+    max-height: 36px;
+  }
+  
+  .navbar-brand h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .navbar-nav .nav-item {
+    position: relative;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #555;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    color: #007bff;
+  }
+  
+  /* 导航链接下划线效果 */
+  .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .navbar-nav .nav-link:hover::after,
+  .navbar-nav .nav-link.active::after {
+    width: 80%;
+  }
+  
+  /* 下拉菜单 */
+  .nav-item {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .nav-item:hover .dropdown-menu {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #333;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    color: #007bff;
+    background-color: #f8f9fa;
+  }
+  
+  /* 移动端菜单样式 */
+  .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    background: transparent;
+    position: relative;
+    z-index: 1001;
+  }
+  
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .navbar-toggler-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-toggler-icon::before {
+    top: -6px;
+  }
+  
+  .navbar-toggler-icon::after {
+    top: 6px;
+  }
+  
+  .navbar-toggler.active .navbar-toggler-icon {
+    background-color: transparent;
+  }
+  
+  .navbar-toggler.active .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .navbar-toggler.active .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  
+  /* 主题切换器按钮 */
+  .theme-switcher-toggle {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    color: #495057;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 100;
+  }
+  
+  .theme-switcher-toggle:hover {
+    background-color: #e9ecef;
+    transform: rotate(15deg);
+  }
+  
+  .theme-switcher-toggle i {
+    font-size: 1.2rem;
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background-color: #fff;
+      padding: 60px 20px 20px;
+      z-index: 1000;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+      transition: right 0.3s ease;
+    }
+    
+    .navbar-collapse.show {
+      right: 0;
+    }
+    
+    .navbar-nav {
+      flex-direction: column;
+    }
+    
+    .navbar-nav .nav-item {
+      margin: 0;
+    }
+    
+    .navbar-nav .nav-link {
+      padding: 0.75rem 0;
+    }
+    
+    .dropdown-menu {
+      position: static;
+      float: none;
+      min-width: 100%;
+      margin-top: 0.5rem;
+      box-shadow: none;
+      border: 1px solid #dee2e6;
+      border-radius: 0.25rem;
+    }
+    
+    .theme-switcher-toggle {
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      z-index: 1001;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .navbar-brand {
+      font-size: 1.25rem;
+    }
+    
+    .navbar-brand h1 {
+      font-size: 1.25rem;
+    }
+    
+    .navbar-brand .logo {
+      max-height: 30px;
+    }
+    
+    .navbar-collapse {
+      width: 100%;
+      right: -100%;
+    }
+  }
+  
+  /* 暗黑模式样式 */
+  body.theme-dark .header {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  body.theme-dark .navbar-brand {
+    color: #fff;
+  }
+  
+  body.theme-dark .navbar-nav .nav-link {
+    color: #b0b0b0;
+  }
+  
+  body.theme-dark .navbar-nav .nav-link:hover,
+  body.theme-dark .navbar-nav .nav-link.active {
+    color: #6c5ce7;
+  }
+  
+  body.theme-dark .navbar-nav .nav-link::after {
+    background-color: #6c5ce7;
+  }
+  
+  body.theme-dark .dropdown-menu {
+    background-color: #252525;
+    border-color: #333;
+    color: #fff;
+  }
+  
+  body.theme-dark .dropdown-item {
+    color: #b0b0b0;
+  }
+  
+  body.theme-dark .dropdown-item:hover,
+  body.theme-dark .dropdown-item:focus {
+    color: #fff;
+    background-color: #333;
+  }
+  
+  body.theme-dark .navbar-toggler-icon,
+  body.theme-dark .navbar-toggler-icon::before,
+  body.theme-dark .navbar-toggler-icon::after {
+    background-color: #fff;
+  }
+  
+  body.theme-dark .navbar-collapse {
+    background-color: #1e1e1e;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  body.theme-dark .theme-switcher-toggle {
+    background-color: #333;
+    border-color: #444;
+    color: #b0b0b0;
+  }
+  
+  body.theme-dark .theme-switcher-toggle:hover {
+    background-color: #444;
+    color: #fff;
+  }
+</style>

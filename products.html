@@ -1,0 +1,338 @@
+---
+layout: default
+title: 产品展示
+description: 探索我们的产品系列，满足您的业务需求
+---
+
+<section class="products-header section-padding bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1>产品展示</h1>
+        <p class="lead">创新科技，优质产品</p>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="/">首页</a></li>
+            <li class="breadcrumb-item active" aria-current="page">产品展示</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products-intro section-padding">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>产品系列</h2>
+      <p>我们致力于为客户提供高品质、高性能的产品</p>
+    </div>
+    <div class="products-grid">
+      {% for product in site.products %}
+      <div class="product-card">
+        {% if product.badge %}
+        <div class="product-badge {{ product.badge }}">{{ product.badge == 'new' ? '新品' : '热门' }}</div>
+        {% endif %}
+        <div class="product-image">
+          <img src="{{ product.image }}" alt="{{ product.title }}" class="img-fluid">
+        </div>
+        <div class="product-info">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.description }}</p>
+          <a href="{{ product.link }}" class="btn">查看详情</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="featured-product section-padding bg-light">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>明星产品</h2>
+      <p>我们的核心产品和解决方案</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="/assets/images/featured-product.jpg" alt="企业CMS系统" class="img-fluid rounded-lg shadow-lg">
+      </div>
+      <div class="col-md-6">
+        <div class="product-badge new">新品</div>
+        <h3>企业CMS系统</h3>
+        <p>我们的企业CMS系统是一款功能强大、易于使用的内容管理系统，专为企业网站设计。它提供了丰富的功能和灵活的配置选项，帮助企业轻松管理网站内容，提升运营效率。</p>
+        
+        <h4>核心功能</h4>
+        <div class="features-list">
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>直观的内容编辑器</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>响应式设计支持</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>多语言支持</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>用户权限管理</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>内容版本控制</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>SEO友好设计</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>数据分析功能</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>插件扩展系统</span>
+          </div>
+        </div>
+        
+        <div class="product-cta">
+          <a href="#contact" class="btn">免费试用</a>
+          <a href="#" class="btn btn-outline">在线演示</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-comparison section-padding">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>产品对比</h2>
+      <p>选择最适合您的解决方案</p>
+    </div>
+    <div class="comparison-table">
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th>功能特性</th>
+            {% for product in site.products %}
+            <th>{{ product.title }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>基础功能</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td>高级分析</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-times text-danger"></i></td>
+          </tr>
+          <tr>
+            <td>多用户支持</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-times text-danger"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td>API接口</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td>自定义开发</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-times text-danger"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-times text-danger"></i></td>
+          </tr>
+          <tr>
+            <td>云存储</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-plans section-padding bg-light">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>价格方案</h2>
+      <p>灵活的定价，满足不同规模企业的需求</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-plan">
+        <div class="plan-header">
+          <h3>基础版</h3>
+          <div class="plan-price">
+            <span class="price">¥999</span>
+            <span class="period">/年</span>
+          </div>
+        </div>
+        <div class="plan-features">
+          <ul>
+            <li><i class="fas fa-check-circle"></i> 基础功能访问</li>
+            <li><i class="fas fa-check-circle"></i> 5GB存储空间</li>
+            <li><i class="fas fa-check-circle"></i> 10个用户账号</li>
+            <li><i class="fas fa-check-circle"></i> 电子邮件支持</li>
+            <li><i class="fas fa-times-circle"></i> 高级分析功能</li>
+            <li><i class="fas fa-times-circle"></i> API接口访问</li>
+          </ul>
+        </div>
+        <div class="plan-cta">
+          <a href="#contact" class="btn btn-outline">选择方案</a>
+        </div>
+      </div>
+      
+      <div class="pricing-plan popular">
+        <div class="plan-badge">推荐</div>
+        <div class="plan-header">
+          <h3>专业版</h3>
+          <div class="plan-price">
+            <span class="price">¥2999</span>
+            <span class="period">/年</span>
+          </div>
+        </div>
+        <div class="plan-features">
+          <ul>
+            <li><i class="fas fa-check-circle"></i> 全部基础功能</li>
+            <li><i class="fas fa-check-circle"></i> 20GB存储空间</li>
+            <li><i class="fas fa-check-circle"></i> 50个用户账号</li>
+            <li><i class="fas fa-check-circle"></i> 电话和邮件支持</li>
+            <li><i class="fas fa-check-circle"></i> 高级分析功能</li>
+            <li><i class="fas fa-check-circle"></i> API接口访问</li>
+          </ul>
+        </div>
+        <div class="plan-cta">
+          <a href="#contact" class="btn">选择方案</a>
+        </div>
+      </div>
+      
+      <div class="pricing-plan">
+        <div class="plan-header">
+          <h3>企业版</h3>
+          <div class="plan-price">
+            <span class="price">¥9999</span>
+            <span class="period">/年</span>
+          </div>
+        </div>
+        <div class="plan-features">
+          <ul>
+            <li><i class="fas fa-check-circle"></i> 全部功能</li>
+            <li><i class="fas fa-check-circle"></i> 100GB存储空间</li>
+            <li><i class="fas fa-check-circle"></i> 无限用户账号</li>
+            <li><i class="fas fa-check-circle"></i> 7×24小时专属支持</li>
+            <li><i class="fas fa-check-circle"></i> 高级分析功能</li>
+            <li><i class="fas fa-check-circle"></i> 定制开发支持</li>
+          </ul>
+        </div>
+        <div class="plan-cta">
+          <a href="#contact" class="btn btn-outline">选择方案</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials section-padding">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>客户使用反馈</h2>
+      <p>看看我们的客户如何使用我们的产品</p>
+    </div>
+    <div class="testimonials-slider">
+      {% for testimonial in site.testimonials %}
+      <div class="testimonial-item">
+        <div class="testimonial-content">
+          <p>{{ testimonial.content }}</p>
+        </div>
+        <div class="testimonial-author">
+          <img src="{{ testimonial.avatar }}" alt="{{ testimonial.name }}" class="img-fluid rounded-circle">
+          <div class="author-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p>{{ testimonial.role }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact section-padding bg-light">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>联系我们</h2>
+      <p>了解更多产品信息，获取个性化解决方案</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="info-content">
+              <h4>地址</h4>
+              <p>{{ site.contact.address }}</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div class="info-content">
+              <h4>电话</h4>
+              <p>{{ site.contact.phone }}</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div class="info-content">
+              <h4>邮箱</h4>
+              <p>{{ site.contact.email }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="contact-form">
+          <form action="#" method="post">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="您的姓名" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="您的邮箱" required>
+            </div>
+            <div class="form-group">
+              <select name="product" required>
+                <option value="">感兴趣的产品</option>
+                {% for product in site.products %}
+                <option value="{{ product.title }}">{{ product.title }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="您的需求描述" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">获取报价</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

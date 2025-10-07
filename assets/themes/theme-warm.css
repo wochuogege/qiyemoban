@@ -1,0 +1,735 @@
+/* 温暖柔和主题样式 */
+:root {
+  /* 主色调 - 温暖橙色系 */
+  --primary-color: #f39c12;
+  --primary-dark: #e67e22;
+  --primary-light: #f8b739;
+  
+  /* 辅助色调 */
+  --secondary-color: #e74c3c;
+  --accent-color-1: #3498db;
+  --accent-color-2: #27ae60;
+  --accent-color-3: #9b59b6;
+  --accent-color-4: #16a085;
+  
+  /* 文字颜色 */
+  --text-primary: #34495e;
+  --text-secondary: #7f8c8d;
+  --text-light: #bdc3c7;
+  --text-white: #ffffff;
+  
+  /* 背景颜色 */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fff9f2;
+  --bg-dark: #34495e;
+  --bg-light: #f9f9f9;
+  
+  /* 边框颜色 */
+  --border-color: #ecd9c6;
+  
+  /* 阴影 */
+  --shadow-sm: 0 4px 8px rgba(243, 156, 18, 0.1);
+  --shadow-md: 0 8px 16px rgba(243, 156, 18, 0.15);
+  --shadow-lg: 0 15px 30px rgba(243, 156, 18, 0.2);
+  
+  /* 过渡动画 */
+  --transition: all 0.3s ease;
+  
+  /* 温暖柔和风格特有样式 */
+  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --gradient-secondary: linear-gradient(135deg, #f1c40f, var(--primary-color));
+  --gradient-accent: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+/* 主题特定样式 */
+body.theme-warm {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+/* 标题样式 */
+.theme-warm h1,
+.theme-warm h2,
+.theme-warm h3,
+.theme-warm h4,
+.theme-warm h5,
+.theme-warm h6 {
+  font-weight: 700;
+  color: var(--primary-color);
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.theme-warm h2 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.theme-warm h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* 段落样式 */
+.theme-warm p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  color: var(--text-primary);
+}
+
+/* 按钮样式 */
+.theme-warm .btn {
+  position: relative;
+  padding: 12px 35px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 50px;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.theme-warm .btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.theme-warm .btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.theme-warm .btn-accent {
+  background-color: var(--accent-color-2);
+  color: white;
+}
+
+.theme-warm .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.theme-warm .btn:hover::before {
+  left: 100%;
+}
+
+.theme-warm .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-warm .btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+/* 头部样式 */
+.theme-warm .site-header {
+  background-color: white;
+  box-shadow: var(--shadow-sm);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.theme-warm .site-logo h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* 导航样式 */
+.theme-warm .main-nav li {
+  margin-left: 25px;
+}
+
+.theme-warm .main-nav a {
+  color: var(--text-primary);
+  font-weight: 600;
+  position: relative;
+  padding: 10px 15px;
+  border-radius: 50px;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.theme-warm .main-nav a:hover,
+.theme-warm .main-nav a.active {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+/* 轮播图样式 */
+.theme-warm .carousel-section {
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-secondary);
+}
+
+.theme-warm .carousel-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.theme-warm .carousel-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+.theme-warm .carousel-content h2 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: white;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  display: block;
+}
+
+.theme-warm .carousel-content h2::after {
+  display: none;
+}
+
+.theme-warm .carousel-content p {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  opacity: 0.9;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+/* 装饰元素 */
+.theme-warm .decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.theme-warm .circle-1 {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(243, 156, 18, 0.1);
+  top: -200px;
+  right: -200px;
+}
+
+.theme-warm .circle-2 {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(231, 76, 60, 0.1);
+  bottom: -150px;
+  left: -150px;
+}
+
+/* 关于我们区域 */
+.theme-warm .about-intro {
+  padding: 120px 0;
+  background-color: var(--bg-secondary);
+  position: relative;
+}
+
+.theme-warm .about-content {
+  padding: 30px;
+}
+
+.theme-warm .about-image {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.theme-warm .about-image:hover {
+  transform: scale(1.02);
+}
+
+.theme-warm .about-image img {
+  transition: transform 0.5s ease;
+}
+
+.theme-warm .about-image:hover img {
+  transform: scale(1.05);
+}
+
+/* 服务卡片 */
+.theme-warm .services-showcase {
+  padding: 120px 0;
+  background-color: var(--bg-primary);
+}
+
+.theme-warm .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.theme-warm .service-item {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.theme-warm .service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gradient-primary);
+}
+
+.theme-warm .service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-warm .service-item i {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.theme-warm .service-item:hover i {
+  transform: scale(1.1);
+}
+
+/* 产品卡片 */
+.theme-warm .products-showcase {
+  padding: 120px 0;
+  background-color: var(--bg-secondary);
+}
+
+.theme-warm .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.theme-warm .product-item {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  position: relative;
+}
+
+.theme-warm .product-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-warm .product-image img {
+  height: 250px;
+  transition: transform 0.5s ease;
+}
+
+.theme-warm .product-item:hover img {
+  transform: scale(1.1);
+}
+
+.theme-warm .product-content {
+  padding: 30px;
+}
+
+.theme-warm .product-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+/* 博客卡片 */
+.theme-warm .latest-blog {
+  padding: 120px 0;
+  background-color: var(--bg-primary);
+}
+
+.theme-warm .blog-item {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.theme-warm .blog-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-warm .blog-image img {
+  height: 220px;
+  transition: transform 0.5s ease;
+}
+
+.theme-warm .blog-item:hover img {
+  transform: scale(1.1);
+}
+
+.theme-warm .blog-content {
+  padding: 30px;
+}
+
+.theme-warm .blog-date {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.theme-warm .blog-read-more {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.theme-warm .blog-read-more i {
+  margin-left: 10px;
+  transition: var(--transition);
+}
+
+.theme-warm .blog-read-more:hover {
+  color: var(--primary-dark);
+}
+
+.theme-warm .blog-read-more:hover i {
+  margin-left: 15px;
+}
+
+/* 客户评价 */
+.theme-warm .testimonials {
+  padding: 120px 0;
+  background: var(--gradient-accent);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-warm .testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><path d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /></g></g></svg>');
+}
+
+.theme-warm .testimonial-item {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+  color: var(--text-primary);
+}
+
+.theme-warm .testimonial-item:hover {
+  transform: translateY(-10px);
+}
+
+.theme-warm .testimonial-content {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-style: italic;
+  position: relative;
+  padding: 20px 0;
+}
+
+.theme-warm .testimonial-content::before,
+.theme-warm .testimonial-content::after {
+  content: '"';
+  font-size: 3rem;
+  color: var(--primary-color);
+  opacity: 0.3;
+  font-style: normal;
+}
+
+.theme-warm .testimonial-content::before {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+}
+
+.theme-warm .testimonial-content::after {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+}
+
+.theme-warm .author-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-warm .author-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: 3px solid var(--primary-color);
+}
+
+.theme-warm .author-details {
+  text-align: left;
+}
+
+.theme-warm .author-name {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.theme-warm .author-role {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* 页脚样式 */
+.theme-warm .site-footer {
+  background-color: var(--bg-dark);
+  color: white;
+  padding: 100px 0 50px;
+  position: relative;
+}
+
+.theme-warm .footer-top {
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-warm .footer-about h3,
+.theme-warm .footer-links h4,
+.theme-warm .footer-contact h4,
+.theme-warm .footer-social h4 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.theme-warm .footer-about h3::after,
+.theme-warm .footer-links h4::after,
+.theme-warm .footer-contact h4::after,
+.theme-warm .footer-social h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.theme-warm .footer-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.theme-warm .footer-links li {
+  margin-bottom: 12px;
+}
+
+.theme-warm .footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+  text-decoration: none;
+  position: relative;
+  padding-left: 15px;
+  display: inline-block;
+}
+
+.theme-warm .footer-links a::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.theme-warm .footer-links a:hover {
+  color: white;
+  padding-left: 20px;
+}
+
+.theme-warm .footer-contact-info {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.theme-warm .footer-contact-icon {
+  margin-right: 15px;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.theme-warm .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  margin-right: 15px;
+  transition: var(--transition);
+  font-size: 1.2rem;
+}
+
+.theme-warm .social-link:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.theme-warm .copyright {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  padding-top: 30px;
+}
+
+.theme-warm .copyright::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 主题切换器 */
+.theme-warm .theme-switcher-toggle {
+  background-color: var(--primary-color);
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  font-size: 1.4rem;
+}
+
+.theme-warm .theme-switcher-toggle:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .theme-warm .carousel-content h2 {
+    font-size: 3rem;
+  }
+  
+  .theme-warm h2 {
+    font-size: 2.2rem;
+  }
+  
+  .theme-warm .main-nav li {
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .theme-warm .carousel-content h2 {
+    font-size: 2.2rem;
+  }
+  
+  .theme-warm .carousel-content p {
+    font-size: 1.1rem;
+  }
+  
+  .theme-warm .service-item {
+    padding: 30px 20px;
+  }
+  
+  .theme-warm .testimonial-item {
+    padding: 30px 20px;
+  }
+  
+  .theme-warm .author-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .theme-warm .author-avatar {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}

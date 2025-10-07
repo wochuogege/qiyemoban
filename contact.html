@@ -1,0 +1,286 @@
+---
+layout: default
+title: 联系我们
+description: 通过电话、邮件或在线表单与我们联系，我们将尽快回复您
+---
+
+<section class="contact-header section-padding bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1>联系我们</h1>
+        <p class="lead">无论您有任何问题或需求，都欢迎随时与我们联系</p>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="/">首页</a></li>
+            <li class="breadcrumb-item active" aria-current="page">联系我们</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-info section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info-content">
+            <h3>公司地址</h3>
+            <p>{{ site.contact.address }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="info-content">
+            <h3>联系电话</h3>
+            <p>{{ site.contact.phone }}</p>
+            <p>周一至周五: 9:00 - 18:00</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-content">
+            <h3>电子邮箱</h3>
+            <p>{{ site.contact.email }}</p>
+            <p>我们将在24小时内回复</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-map section-padding bg-light">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>办公地点</h2>
+      <p>欢迎前来参观指导</p>
+    </div>
+    <div class="map-container">
+      <!-- 这里可以嵌入地图，例如使用百度地图或高德地图的API -->
+      <div class="map-placeholder" style="height: 400px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+        <p class="text-muted">地图将在这里显示</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-form section-padding">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>发送消息</h2>
+      <p>填写下方表单，我们将尽快与您联系</p>
+    </div>
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <form action="#" method="post" class="form">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" name="name" placeholder="您的姓名*" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="email" name="email" placeholder="您的邮箱*" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="tel" name="phone" placeholder="您的电话">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select name="subject" required>
+                  <option value="">咨询主题*</option>
+                  <option value="product">产品咨询</option>
+                  <option value="service">服务咨询</option>
+                  <option value="pricing">价格咨询</option>
+                  <option value="support">技术支持</option>
+                  <option value="cooperation">商务合作</option>
+                  <option value="other">其他问题</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="您的留言内容*" rows="8" required></textarea>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="privacy" name="privacy" required>
+              <label class="form-check-label" for="privacy">我已阅读并同意<a href="#">隐私政策</a>*</label>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="btn">发送消息</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq section-padding bg-light">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>常见问题</h2>
+      <p>以下是客户经常询问的问题</p>
+    </div>
+    <div class="faq-accordion">
+      <div class="accordion-item">
+        <button class="accordion-title">如何获取产品演示？</button>
+        <div class="accordion-content">
+          <p>您可以通过联系页面的表单或直接拨打电话申请产品演示。我们的销售团队将在24小时内与您联系，安排适合您的演示时间，并根据您的需求准备相关演示内容。</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-title">你们提供售后服务吗？</button>
+        <div class="accordion-content">
+          <p>是的，我们提供全面的售后服务，包括技术支持、产品培训和问题排查。我们的服务团队将确保您在使用我们产品的过程中获得及时有效的帮助。</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-title">产品可以定制开发吗？</button>
+        <div class="accordion-content">
+          <p>我们提供产品定制服务，可以根据客户的特定需求进行功能定制、界面调整和系统集成。请联系我们的销售团队了解更多关于定制服务的信息。</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-title">付款方式有哪些？</button>
+        <div class="accordion-content">
+          <p>我们支持多种付款方式，包括银行转账、支付宝、微信支付等。具体的付款方式和条款可以与我们的销售团队协商确定。</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-title">如何升级我的产品版本？</button>
+        <div class="accordion-content">
+          <p>当有新版本发布时，您可以通过我们的客户管理系统下载更新包，或者联系我们的技术支持团队获取升级指导。我们会定期提供产品更新和功能优化。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team section-padding">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>我们的团队</h2>
+      <p>认识我们专业的团队成员</p>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="team-member">
+          <div class="member-image">
+            <img src="/assets/images/team-member-1.jpg" alt="张总监" class="img-fluid">
+          </div>
+          <div class="member-info">
+            <h3>张总监</h3>
+            <p>技术总监</p>
+            <div class="member-social">
+              <a href="#"><i class="fab fa-weixin"></i></a>
+              <a href="#"><i class="fab fa-weibo"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-member">
+          <div class="member-image">
+            <img src="/assets/images/team-member-2.jpg" alt="李经理" class="img-fluid">
+          </div>
+          <div class="member-info">
+            <h3>李经理</h3>
+            <p>销售经理</p>
+            <div class="member-social">
+              <a href="#"><i class="fab fa-weixin"></i></a>
+              <a href="#"><i class="fab fa-weibo"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-member">
+          <div class="member-image">
+            <img src="/assets/images/team-member-3.jpg" alt="王设计师" class="img-fluid">
+          </div>
+          <div class="member-info">
+            <h3>王设计师</h3>
+            <p>UI/UX设计师</p>
+            <div class="member-social">
+              <a href="#"><i class="fab fa-weixin"></i></a>
+              <a href="#"><i class="fab fa-weibo"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-member">
+          <div class="member-image">
+            <img src="/assets/images/team-member-4.jpg" alt="赵工程师" class="img-fluid">
+          </div>
+          <div class="member-info">
+            <h3>赵工程师</h3>
+            <p>前端工程师</p>
+            <div class="member-social">
+              <a href="#"><i class="fab fa-weixin"></i></a>
+              <a href="#"><i class="fab fa-weibo"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials section-padding bg-light">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>客户评价</h2>
+      <p>听听我们的客户怎么说</p>
+    </div>
+    <div class="testimonials-slider">
+      {% for testimonial in site.testimonials %}
+      <div class="testimonial-item">
+        <div class="testimonial-content">
+          <p>{{ testimonial.content }}</p>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-author">
+          <img src="{{ testimonial.avatar }}" alt="{{ testimonial.name }}" class="img-fluid rounded-circle">
+          <div class="author-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p>{{ testimonial.role }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

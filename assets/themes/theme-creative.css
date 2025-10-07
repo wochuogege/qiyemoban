@@ -1,0 +1,477 @@
+/* 创意设计主题样式 */
+:root {
+  /* 主色调 - 创意紫色系 */
+  --primary-color: #6c63ff;
+  --primary-dark: #5a53d9;
+  --primary-light: #9d99ff;
+  
+  /* 辅助色调 */
+  --secondary-color: #ff6584;
+  --success-color: #00cec9;
+  --danger-color: #ff6b6b;
+  --warning-color: #fdcb6e;
+  --info-color: #74b9ff;
+  
+  /* 文字颜色 */
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --text-light: #b2bec3;
+  --text-white: #ffffff;
+  
+  /* 背景颜色 */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9ff;
+  --bg-dark: #2d3436;
+  --bg-light: #f1f1ff;
+  
+  /* 边框颜色 */
+  --border-color: #e0e0ff;
+  
+  /* 阴影 */
+  --shadow-sm: 0 4px 8px rgba(108, 99, 255, 0.1);
+  --shadow-md: 0 8px 16px rgba(108, 99, 255, 0.15);
+  --shadow-lg: 0 15px 30px rgba(108, 99, 255, 0.2);
+  
+  /* 过渡动画 */
+  --transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* 主题特定样式 */
+body.theme-creative {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Poppins', 'Roboto', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+}
+
+/* 标题样式 */
+.theme-creative h1,
+.theme-creative h2,
+.theme-creative h3,
+.theme-creative h4,
+.theme-creative h5,
+.theme-creative h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+.theme-creative h2 {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.theme-creative h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+/* 按钮样式 */
+.theme-creative .btn {
+  border-radius: 30px;
+  font-weight: 600;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.theme-creative .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.theme-creative .btn:hover::before {
+  left: 100%;
+}
+
+.theme-creative .btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+
+.theme-creative .btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+}
+
+/* 头部样式 */
+.theme-creative .site-header {
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(5px);
+}
+
+.theme-creative .site-logo h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 导航样式 */
+.theme-creative .main-nav li {
+  margin-left: 30px;
+}
+
+.theme-creative .main-nav a {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  position: relative;
+  color: var(--text-primary);
+}
+
+.theme-creative .main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.theme-creative .main-nav a:hover,
+.theme-creative .main-nav a.active {
+  color: var(--primary-color);
+}
+
+.theme-creative .main-nav a:hover::after,
+.theme-creative .main-nav a.active::after {
+  width: 100%;
+}
+
+/* 轮播图样式 */
+.theme-creative .carousel-section {
+  height: 600px;
+  overflow: hidden;
+}
+
+.theme-creative .carousel-slide {
+  position: relative;
+}
+
+.theme-creative .carousel-image {
+  filter: brightness(0.6);
+}
+
+.theme-creative .carousel-content h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 25px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: none;
+  padding: 0;
+  display: block;
+}
+
+.theme-creative .carousel-content h2::after {
+  display: none;
+}
+
+.theme-creative .carousel-content p {
+  font-size: 1.4rem;
+  max-width: 800px;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 关于我们区域 */
+.theme-creative .about-intro {
+  padding: 100px 0;
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-creative .about-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, var(--primary-light), transparent);
+  border-radius: 50%;
+  opacity: 0.2;
+  transform: translate(50%, -50%);
+}
+
+/* 服务卡片 */
+.theme-creative .services-showcase {
+  padding: 100px 0;
+  background-color: var(--bg-primary);
+}
+
+.theme-creative .services-grid {
+  gap: 30px;
+}
+
+.theme-creative .service-item {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px 30px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-creative .service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.theme-creative .service-item:hover {
+  transform: translateY(-15px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.theme-creative .service-item i {
+  color: var(--primary-color);
+  font-size: 3rem;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+}
+
+.theme-creative .service-item:hover i {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* 产品卡片 */
+.theme-creative .products-showcase {
+  padding: 100px 0;
+  background-color: var(--bg-secondary);
+}
+
+.theme-creative .product-item {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.theme-creative .product-item:hover {
+  transform: translateY(-15px);
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-creative .product-item img {
+  height: 250px;
+  border-bottom: 4px solid var(--primary-color);
+  transition: transform 0.5s ease;
+}
+
+.theme-creative .product-item:hover img {
+  transform: scale(1.05);
+}
+
+/* 博客卡片 */
+.theme-creative .latest-blog {
+  padding: 100px 0;
+}
+
+.theme-creative .blog-item {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.theme-creative .blog-item:hover {
+  transform: translateY(-15px);
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-creative .blog-date {
+  color: var(--primary-color);
+  font-weight: 600;
+  background-color: var(--bg-light);
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 30px;
+  margin-bottom: 15px;
+}
+
+/* 客户评价 */
+.theme-creative .testimonials {
+  padding: 100px 0;
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-creative .testimonials::before,
+.theme-creative .testimonials::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.theme-creative .testimonials::before {
+  background: linear-gradient(135deg, var(--primary-color), transparent);
+  top: -150px;
+  right: -150px;
+}
+
+.theme-creative .testimonials::after {
+  background: linear-gradient(135deg, transparent, var(--secondary-color));
+  bottom: -150px;
+  left: -150px;
+}
+
+.theme-creative .testimonial-item {
+  background-color: white;
+  border-radius: 15px;
+  padding: 45px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  position: relative;
+}
+
+.theme-creative .testimonial-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-creative .testimonial-content {
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: var(--text-secondary);
+}
+
+.theme-creative .testimonial-content::before,
+.theme-creative .testimonial-content::after {
+  font-size: 4rem;
+  color: var(--primary-color);
+  opacity: 0.1;
+}
+
+.theme-creative .author-name {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+/* 页脚样式 */
+.theme-creative .site-footer {
+  background-color: var(--bg-dark);
+  padding: 80px 0 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-creative .site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.theme-creative .footer-about h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  background: none;
+  display: block;
+  padding: 0;
+}
+
+.theme-creative .footer-about h3::after {
+  display: none;
+}
+
+.theme-creative .footer-links h4,
+.theme-creative .footer-contact h4,
+.theme-creative .footer-social h4 {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.theme-creative .footer-links h4::after,
+.theme-creative .footer-contact h4::after,
+.theme-creative .footer-social h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.theme-creative .social-link {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.theme-creative .social-link:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-5px) rotate(10deg);
+}
+
+/* 主题切换器 */
+.theme-creative .theme-switcher-toggle {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+  font-size: 1.6rem;
+}
+
+.theme-creative .theme-switcher-toggle:hover {
+  transform: rotate(20deg) scale(1.1);
+}

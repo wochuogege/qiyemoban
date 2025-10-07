@@ -1,0 +1,333 @@
+---
+layout: default
+title: 博客动态
+description: 了解最新的公司动态、行业资讯和技术分享
+---
+
+<section class="blog-header section-padding bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1>博客动态</h1>
+        <p class="lead">分享最新资讯，传播专业知识</p>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="/">首页</a></li>
+            <li class="breadcrumb-item active" aria-current="page">博客动态</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-posts section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="blog-list">
+          {% for post in site.posts %}
+          <article class="blog-post">
+            <div class="post-image">
+              <img src="{{ post.image }}" alt="{{ post.title }}" class="img-fluid">
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="post-date"><i class="fas fa-calendar-alt"></i> {{ post.date | date: "%Y-%m-%d" }}</span>
+                <span class="post-category"><i class="fas fa-folder"></i> {{ post.category }}</span>
+                <span class="post-comments"><i class="fas fa-comment"></i> {{ post.comments_count }}</span>
+              </div>
+              <h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
+              <p>{{ post.excerpt }}</p>
+              <a href="{{ post.link }}" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+          {% endfor %}
+          
+          <div class="pagination">
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">上一页</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">下一页</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="sidebar">
+          <div class="sidebar-search">
+            <form action="#" method="get">
+              <input type="text" name="s" placeholder="搜索文章..." required>
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+          
+          <div class="sidebar-category">
+            <h3>文章分类</h3>
+            <ul>
+              <li><a href="#">技术分享 <span>12</span></a></li>
+              <li><a href="#">行业动态 <span>8</span></a></li>
+              <li><a href="#">公司新闻 <span>5</span></a></li>
+              <li><a href="#">产品更新 <span>7</span></a></li>
+              <li><a href="#">案例分析 <span>4</span></a></li>
+            </ul>
+          </div>
+          
+          <div class="sidebar-recent">
+            <h3>最新文章</h3>
+            <ul>
+              {% for post in site.posts limit:5 %}
+              <li>
+                <a href="{{ post.link }}">
+                  <img src="{{ post.image }}" alt="{{ post.title }}" class="img-fluid">
+                  <h4>{{ post.title }}</h4>
+                  <p>{{ post.date | date: "%Y-%m-%d" }}</p>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          
+          <div class="sidebar-tags">
+            <h3>热门标签</h3>
+            <div class="tags-list">
+              <a href="#">网站开发</a>
+              <a href="#">前端技术</a>
+              <a href="#">设计趋势</a>
+              <a href="#">SEO优化</a>
+              <a href="#">响应式设计</a>
+              <a href="#">用户体验</a>
+              <a href="#">性能优化</a>
+              <a href="#">移动应用</a>
+            </div>
+          </div>
+          
+          <div class="sidebar-newsletter">
+            <h3>订阅资讯</h3>
+            <p>订阅我们的电子邮件，获取最新资讯和独家优惠。</p>
+            <form action="#" method="post">
+              <input type="email" name="email" placeholder="您的邮箱地址" required>
+              <button type="submit" class="btn">订阅</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-posts section-padding bg-light">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>推荐阅读</h2>
+      <p>精选的精彩内容，不容错过</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <article class="featured-post">
+          <div class="post-image">
+            <img src="/assets/images/featured-post-1.jpg" alt="网站优化技巧" class="img-fluid">
+            <div class="post-overlay">
+              <a href="#" class="read-more"><i class="fas fa-link"></i></a>
+            </div>
+          </div>
+          <div class="post-content">
+            <span class="post-category">技术分享</span>
+            <h3><a href="#">网站优化技巧：提升用户体验和转化率</a></h3>
+            <p>本文分享了10个实用的网站优化技巧，帮助您提升网站性能、改善用户体验并提高转化率。</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-4">
+        <article class="featured-post">
+          <div class="post-image">
+            <img src="/assets/images/featured-post-2.jpg" alt="设计趋势" class="img-fluid">
+            <div class="post-overlay">
+              <a href="#" class="read-more"><i class="fas fa-link"></i></a>
+            </div>
+          </div>
+          <div class="post-content">
+            <span class="post-category">设计趋势</span>
+            <h3><a href="#">2024年网站设计趋势预测与分析</a></h3>
+            <p>探索2024年将主导网站设计领域的关键趋势，从视觉风格到交互体验的全面分析。</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-4">
+        <article class="featured-post">
+          <div class="post-image">
+            <img src="/assets/images/featured-post-3.jpg" alt="SEO策略" class="img-fluid">
+            <div class="post-overlay">
+              <a href="#" class="read-more"><i class="fas fa-link"></i></a>
+            </div>
+          </div>
+          <div class="post-content">
+            <span class="post-category">SEO优化</span>
+            <h3><a href="#">新算法下的SEO策略调整：2024年必知要点</a></h3>
+            <p>随着搜索引擎算法的不断更新，了解如何调整您的SEO策略以保持竞争力至关重要。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-categories section-padding">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>热门分类</h2>
+      <p>浏览我们的精选内容分类</p>
+    </div>
+    <div class="categories-grid">
+      <div class="category-item">
+        <i class="fas fa-code"></i>
+        <h3>技术分享</h3>
+        <p>深入探讨最新的Web开发技术和最佳实践</p>
+        <a href="#" class="btn btn-outline">查看所有文章</a>
+      </div>
+      <div class="category-item">
+        <i class="fas fa-chart-line"></i>
+        <h3>行业动态</h3>
+        <p>了解最新的行业趋势、市场分析和竞争格局</p>
+        <a href="#" class="btn btn-outline">查看所有文章</a>
+      </div>
+      <div class="category-item">
+        <i class="fas fa-bullhorn"></i>
+        <h3>公司新闻</h3>
+        <p>关注我们的公司动态、产品发布和团队建设</p>
+        <a href="#" class="btn btn-outline">查看所有文章</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="subscribe section-padding bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h2>订阅我们的博客</h2>
+        <p>获取最新的行业动态、技术分享和独家内容，直接发送到您的邮箱。</p>
+        <form action="#" method="post">
+          <div class="subscribe-form">
+            <input type="email" name="email" placeholder="您的邮箱地址" required>
+            <button type="submit" class="btn">立即订阅</button>
+          </div>
+        </form>
+        <p class="privacy-note">我们尊重您的隐私，不会向任何第三方分享您的信息。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="commented-posts section-padding">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>热门讨论</h2>
+      <p>读者积极参与讨论的热门文章</p>
+    </div>
+    <div class="commented-list">
+      <div class="commented-item">
+        <div class="post-info">
+          <h3><a href="#">如何提高网站加载速度？10个实用技巧</a></h3>
+          <p class="post-meta">发布于 2024-01-15 · 42条评论</p>
+        </div>
+        <div class="comment-preview">
+          <div class="comment">
+            <p>这篇文章非常实用，我按照这些技巧优化了我的网站，加载速度提升了40%！</p>
+            <p class="comment-author">— 张小明</p>
+          </div>
+        </div>
+      </div>
+      <div class="commented-item">
+        <div class="post-info">
+          <h3><a href="#">响应式设计最佳实践与常见陷阱</a></h3>
+          <p class="post-meta">发布于 2024-01-10 · 38条评论</p>
+        </div>
+        <div class="comment-preview">
+          <div class="comment">
+            <p>感谢分享这些常见陷阱，我之前确实遇到过一些响应式设计的问题，现在知道如何避免了。</p>
+            <p class="comment-author">— 李华</p>
+          </div>
+        </div>
+      </div>
+      <div class="commented-item">
+        <div class="post-info">
+          <h3><a href="#">Web性能优化：从理论到实践</a></h3>
+          <p class="post-meta">发布于 2024-01-05 · 35条评论</p>
+        </div>
+        <div class="comment-preview">
+          <div class="comment">
+            <p>文章讲解得很清晰，特别是关于性能指标的部分，让我对Web性能有了更深入的理解。</p>
+            <p class="comment-author">— 王芳</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact section-padding">
+  <div class="container">
+    <div class="section-header mb-8">
+      <h2>联系我们</h2>
+      <p>有任何问题或建议，欢迎联系我们</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="info-content">
+              <h4>地址</h4>
+              <p>{{ site.contact.address }}</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div class="info-content">
+              <h4>电话</h4>
+              <p>{{ site.contact.phone }}</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div class="info-content">
+              <h4>邮箱</h4>
+              <p>{{ site.contact.email }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="contact-form">
+          <form action="#" method="post">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="您的姓名" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="您的邮箱" required>
+            </div>
+            <div class="form-group">
+              <select name="subject" required>
+                <option value="">请选择咨询主题</option>
+                <option value="合作咨询">商务合作</option>
+                <option value="技术咨询">技术咨询</option>
+                <option value="媒体采访">媒体采访</option>
+                <option value="其他">其他问题</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="您的留言" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">发送留言</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

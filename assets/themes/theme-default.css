@@ -1,0 +1,90 @@
+/* 默认主题样式 */
+:root {
+  /* 主色调 */
+  --primary-color: #007bff;
+  --primary-dark: #0056b3;
+  --primary-light: #66b0ff;
+  
+  /* 辅助色调 */
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  
+  /* 文字颜色 */
+  --text-primary: #333;
+  --text-secondary: #6c757d;
+  --text-light: #adb5bd;
+  --text-white: #fff;
+  
+  /* 背景颜色 */
+  --bg-primary: #fff;
+  --bg-secondary: #f8f9fa;
+  --bg-dark: #343a40;
+  --bg-light: #e9ecef;
+  
+  /* 边框颜色 */
+  --border-color: #dee2e6;
+  
+  /* 阴影 */
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* 过渡动画 */
+  --transition: all 0.3s ease;
+}
+
+/* 主题特定样式 */
+body.theme-default {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* 按钮样式 */
+.theme-default .btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.theme-default .btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* 头部样式 */
+.theme-default .site-header {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-default .main-nav a:hover::after,
+.theme-default .main-nav a.active::after {
+  background-color: var(--primary-color);
+}
+
+/* 服务图标 */
+.theme-default .service-item i {
+  color: var(--primary-color);
+}
+
+/* 页脚样式 */
+.theme-default .site-footer {
+  background-color: var(--bg-dark);
+}
+
+.theme-default .footer-links h4::after,
+.theme-default .footer-contact h4::after,
+.theme-default .footer-social h4::after {
+  background-color: var(--primary-color);
+}
+
+.theme-default .social-link:hover {
+  background-color: var(--primary-color);
+}
+
+/* 主题切换器 */
+.theme-default .theme-switcher-toggle {
+  background-color: var(--primary-color);
+}
