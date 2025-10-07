@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200" fill="none">
+  <!-- 背景 -->
+  <rect width="300" height="200" rx="8" fill="#F8F9FA"/>
+  
+  <!-- 产品3图形 -->
+  <g transform="translate(150, 100)">
+    <!-- 主体 -->
+    <path d="M-70,50 L0,-70 L70,50 Z" fill="#E74C3C"/>
+    
+    <!-- 产品细节 -->
+    <path d="M-60,40 L0,-60 L60,40 Z" fill="white"/>
+    
+    <!-- 产品图标 -->
+    <path d="M-40,0 L40,0 M0,-30 L0,30" stroke="#E74C3C" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 装饰元素 -->
+  <g opacity="0.1">
+    <path d="M20,20 L80,80 M20,80 L80,20" stroke="#34495E" stroke-width="10"/>
+    <path d="M220,120 L280,180 M220,180 L280,120" stroke="#34495E" stroke-width="10"/>
+  </g>
+</svg>
