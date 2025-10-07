@@ -1,0 +1,144 @@
+---
+layout: default
+---
+
+<!-- 页面标题 -->
+<section class="page-header">
+  <div class="container">
+    <h1>{{ site.data.translations.products.title }}</h1>
+  </div>
+</section>
+
+<!-- 产品列表 -->
+<section class="products">
+  <div class="container">
+    <div class="products-grid">
+      <div class="product-single">
+        <div class="product-gallery">
+          <div class="product-main-image">
+            <img src="{{ "/assets/images/product1.jpg" | relative_url }}" alt="{{ site.data.translations.products.product1.title }}">
+          </div>
+          <div class="product-thumbnails">
+            <img src="{{ "/assets/images/product1-thumb1.jpg" | relative_url }}" alt="Thumbnail 1">
+            <img src="{{ "/assets/images/product1-thumb2.jpg" | relative_url }}" alt="Thumbnail 2">
+            <img src="{{ "/assets/images/product1-thumb3.jpg" | relative_url }}" alt="Thumbnail 3">
+          </div>
+        </div>
+        <div class="product-info">
+          <h2>{{ site.data.translations.products.product1.title }}</h2>
+          <div class="product-description">
+            <p>{{ site.data.translations.products.product1.description }}</p>
+            <p>这是一款高品质的产品，具有以下特点：</p>
+            <ul>
+              <li>特点1：高性能</li>
+              <li>特点2：易用性</li>
+              <li>特点3：可靠性</li>
+              <li>特点4：创新性</li>
+            </ul>
+            <p>我们的产品采用先进的技术和优质的材料制造，确保为客户提供最好的使用体验。如果您对产品有任何疑问，请随时联系我们的客户服务团队。</p>
+          </div>
+          <div class="product-actions">
+            <a href="{{ "/contact/" | relative_url }}" class="btn btn-primary">{{ site.data.translations.nav.contact }}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-single">
+        <div class="product-gallery">
+          <div class="product-main-image">
+            <img src="{{ "/assets/images/product2.jpg" | relative_url }}" alt="{{ site.data.translations.products.product2.title }}">
+          </div>
+          <div class="product-thumbnails">
+            <img src="{{ "/assets/images/product2-thumb1.jpg" | relative_url }}" alt="Thumbnail 1">
+            <img src="{{ "/assets/images/product2-thumb2.jpg" | relative_url }}" alt="Thumbnail 2">
+            <img src="{{ "/assets/images/product2-thumb3.jpg" | relative_url }}" alt="Thumbnail 3">
+          </div>
+        </div>
+        <div class="product-info">
+          <h2>{{ site.data.translations.products.product2.title }}</h2>
+          <div class="product-description">
+            <p>{{ site.data.translations.products.product2.description }}</p>
+            <p>这是一款创新的产品，具有以下特点：</p>
+            <ul>
+              <li>特点1：创新性</li>
+              <li>特点2：高效率</li>
+              <li>特点3：节能环保</li>
+              <li>特点4：安全性高</li>
+            </ul>
+            <p>我们的产品经过严格的质量控制，确保每一件产品都符合高标准的要求。我们的研发团队不断努力，致力于为客户提供更先进、更实用的产品。</p>
+          </div>
+          <div class="product-actions">
+            <a href="{{ "/contact/" | relative_url }}" class="btn btn-primary">{{ site.data.translations.nav.contact }}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-single">
+        <div class="product-gallery">
+          <div class="product-main-image">
+            <img src="{{ "/assets/images/product3.jpg" | relative_url }}" alt="{{ site.data.translations.products.product3.title }}">
+          </div>
+          <div class="product-thumbnails">
+            <img src="{{ "/assets/images/product3-thumb1.jpg" | relative_url }}" alt="Thumbnail 1">
+            <img src="{{ "/assets/images/product3-thumb2.jpg" | relative_url }}" alt="Thumbnail 2">
+            <img src="{{ "/assets/images/product3-thumb3.jpg" | relative_url }}" alt="Thumbnail 3">
+          </div>
+        </div>
+        <div class="product-info">
+          <h2>{{ site.data.translations.products.product3.title }}</h2>
+          <div class="product-description">
+            <p>{{ site.data.translations.products.product3.description }}</p>
+            <p>这是一款专业的产品，具有以下特点：</p>
+            <ul>
+              <li>特点1：专业性强</li>
+              <li>特点2：精确度高</li>
+              <li>特点3：稳定性好</li>
+              <li>特点4：使用寿命长</li>
+            </ul>
+            <p>我们的产品广泛应用于各个领域，深受客户的好评。我们提供完善的售后服务，确保客户在使用过程中得到及时的支持和帮助。</p>
+          </div>
+          <div class="product-actions">
+            <a href="{{ "/contact/" | relative_url }}" class="btn btn-primary">{{ site.data.translations.nav.contact }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 产品优势 -->
+<section class="product-advantages">
+  <div class="container">
+    <h2 class="section-title">产品优势</h2>
+    <div class="advantages-grid">
+      <div class="advantage-item">
+        <div class="advantage-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <h3>优质品质</h3>
+        <p>我们的产品采用高品质材料制造，经过严格的质量控制，确保产品的可靠性和耐久性。</p>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-icon">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <h3>先进技术</h3>
+        <p>我们不断引进和研发先进技术，确保产品在技术上处于行业领先地位。</p>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h3>竞争力价格</h3>
+        <p>我们致力于为客户提供高性价比的产品，在保证质量的同时，提供具有竞争力的价格。</p>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h3>完善服务</h3>
+        <p>我们提供完善的售前、售中、售后服务，确保客户在使用过程中得到及时的支持和帮助。</p>
+      </div>
+    </div>
+  </div>
+</section>

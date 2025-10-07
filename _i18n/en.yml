@@ -1,0 +1,94 @@
+# English translation file
+
+# Website navigation
+nav:
+  home: "Home"
+  about: "About Us"
+  products: "Products"
+  services: "Services"
+  contact: "Contact"
+
+# Home page content
+home:
+  welcome: "Welcome to our website"
+  tagline: "Providing professional solutions"
+  features:
+    title: "Our Advantages"
+    feature1:
+      title: "Professional Team"
+      description: "Experienced professional team"
+    feature2:
+      title: "Quality Service"
+      description: "Providing comprehensive quality services"
+    feature3:
+      title: "Innovative Technology"
+      description: "Continuous innovative technical support"
+  latest_news:
+    title: "Latest News"
+    read_more: "Read More"
+  call_to_action:
+    title: "Contact Us Now"
+    description: "Get professional consulting services"
+    button: "Contact Us"
+
+# About Us
+about:
+  title: "About Us"
+  history: "Company History"
+  mission: "Our Mission"
+  vision: "Our Vision"
+  team: "Our Team"
+  values:
+    title: "Core Values"
+    value1: "Integrity"
+    value2: "Innovation"
+    value3: "Customer First"
+    value4: "Teamwork"
+
+# Products
+products:
+  title: "Our Products"
+  product1:
+    title: "Product Name 1"
+    description: "Product Description 1"
+  product2:
+    title: "Product Name 2"
+    description: "Product Description 2"
+  product3:
+    title: "Product Name 3"
+    description: "Product Description 3"
+
+# Services
+services:
+  title: "Our Services"
+  service1:
+    title: "Service Name 1"
+    description: "Service Description 1"
+  service2:
+    title: "Service Name 2"
+    description: "Service Description 2"
+  service3:
+    title: "Service Name 3"
+    description: "Service Description 3"
+
+# Contact Us
+contact:
+  title: "Contact Us"
+  form:
+    name: "Name"
+    email: "Email"
+    subject: "Subject"
+    message: "Message"
+    submit: "Submit"
+  info:
+    address: "Address"
+    phone: "Phone"
+    email: "Email"
+    working_hours: "Working Hours"
+
+# Footer
+footer:
+  copyright: "© Company Name. All rights reserved."
+  privacy_policy: "Privacy Policy"
+  terms_of_service: "Terms of Service"
+  designed_by: "Designed & Developed"

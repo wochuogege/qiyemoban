@@ -1,0 +1,127 @@
+---
+layout: default
+---
+
+<!-- 英雄区域 -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>{{ site.data.translations.home.welcome }}</h1>
+      <p>{{ site.data.translations.home.tagline }}</p>
+      <div class="hero-buttons">
+        <a href="{{ "/about/" | relative_url }}" class="btn btn-primary">{{ site.data.translations.nav.about }}</a>
+        <a href="{{ "/contact/" | relative_url }}" class="btn btn-secondary">{{ site.data.translations.nav.contact }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 特性区域 -->
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.translations.home.features.title }}</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>{{ site.data.translations.home.features.feature1.title }}</h3>
+        <p>{{ site.data.translations.home.features.feature1.description }}</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <h3>{{ site.data.translations.home.features.feature2.title }}</h3>
+        <p>{{ site.data.translations.home.features.feature2.description }}</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>{{ site.data.translations.home.features.feature3.title }}</h3>
+        <p>{{ site.data.translations.home.features.feature3.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 产品展示 -->
+<section class="products-preview">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.translations.nav.products }}</h2>
+    <div class="products-grid">
+      <div class="product-item">
+        <div class="product-image">
+          <img src="{{ "/assets/images/product1.jpg" | relative_url }}" alt="{{ site.data.translations.products.product1.title }}">
+        </div>
+        <h3>{{ site.data.translations.products.product1.title }}</h3>
+        <p>{{ site.data.translations.products.product1.description }}</p>
+        <a href="{{ "/products/" | relative_url }}" class="btn btn-link">{{ site.data.translations.home.latest_news.read_more }}</a>
+      </div>
+      <div class="product-item">
+        <div class="product-image">
+          <img src="{{ "/assets/images/product2.jpg" | relative_url }}" alt="{{ site.data.translations.products.product2.title }}">
+        </div>
+        <h3>{{ site.data.translations.products.product2.title }}</h3>
+        <p>{{ site.data.translations.products.product2.description }}</p>
+        <a href="{{ "/products/" | relative_url }}" class="btn btn-link">{{ site.data.translations.home.latest_news.read_more }}</a>
+      </div>
+      <div class="product-item">
+        <div class="product-image">
+          <img src="{{ "/assets/images/product3.jpg" | relative_url }}" alt="{{ site.data.translations.products.product3.title }}">
+        </div>
+        <h3>{{ site.data.translations.products.product3.title }}</h3>
+        <p>{{ site.data.translations.products.product3.description }}</p>
+        <a href="{{ "/products/" | relative_url }}" class="btn btn-link">{{ site.data.translations.home.latest_news.read_more }}</a>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="{{ "/products/" | relative_url }}" class="btn btn-primary">{{ site.data.translations.nav.products }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- 服务展示 -->
+<section class="services-preview">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.translations.nav.services }}</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <h3>{{ site.data.translations.services.service1.title }}</h3>
+        <p>{{ site.data.translations.services.service1.description }}</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h3>{{ site.data.translations.services.service2.title }}</h3>
+        <p>{{ site.data.translations.services.service2.description }}</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>{{ site.data.translations.services.service3.title }}</h3>
+        <p>{{ site.data.translations.services.service3.description }}</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="{{ "/services/" | relative_url }}" class="btn btn-primary">{{ site.data.translations.nav.services }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- 行动召唤 -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>{{ site.data.translations.home.call_to_action.title }}</h2>
+      <p>{{ site.data.translations.home.call_to_action.description }}</p>
+      <a href="{{ "/contact/" | relative_url }}" class="btn btn-primary">{{ site.data.translations.home.call_to_action.button }}</a>
+    </div>
+  </div>
+</section>

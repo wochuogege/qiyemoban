@@ -1,0 +1,145 @@
+---
+layout: default
+---
+
+<!-- 页面标题 -->
+<section class="page-header">
+  <div class="container">
+    <h1>{{ site.data.translations.contact.title }}</h1>
+  </div>
+</section>
+
+<!-- 联系信息和表单 -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-content">
+      <!-- 联系信息 -->
+      <div class="contact-info">
+        <h2>{{ site.data.translations.contact.title }}</h2>
+        <p>无论您有任何问题或需求，都可以通过以下方式联系我们，我们的团队将竭诚为您服务。</p>
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-text">
+              <h3>{{ site.data.translations.contact.info.address }}</h3>
+              <p>公司地址：中国XX省XX市XX区XX路XX号XX大厦XX层</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="info-text">
+              <h3>{{ site.data.translations.contact.info.phone }}</h3>
+              <p>电话：+86 010-12345678</p>
+              <p>传真：+86 010-12345679</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info-text">
+              <h3>{{ site.data.translations.contact.info.email }}</h3>
+              <p>邮箱：{{ site.email }}</p>
+              <p>商务合作：business@example.com</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="info-text">
+              <h3>{{ site.data.translations.contact.info.working_hours }}</h3>
+              <p>周一至周五：9:00 - 18:00</p>
+              <p>周六至周日：休息</p>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <h3>关注我们</h3>
+          <ul>
+            <li><a href="#" class="social-link"><i class="fab fa-weixin"></i></a></li>
+            <li><a href="#" class="social-link"><i class="fab fa-weibo"></i></a></li>
+            <li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- 联系表单 -->
+      <div class="contact-form">
+        <h2>发送消息</h2>
+        <form id="contact-form" method="post" action="#">
+          <div class="form-group">
+            <label for="name">{{ site.data.translations.contact.form.name }} <span>*</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">{{ site.data.translations.contact.form.email }} <span>*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">{{ site.data.translations.contact.form.subject }} <span>*</span></label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">{{ site.data.translations.contact.form.message }} <span>*</span></label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{{ site.data.translations.contact.form.submit }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 地图 -->
+<section class="map-section">
+  <div class="container">
+    <h2 class="section-title">我们的位置</h2>
+    <div class="map-container">
+      <!-- 这里可以嵌入地图，例如使用Google Maps或百度地图 -->
+      <div class="map-placeholder">
+        <p>地图加载中...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 常见问题 -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title">常见问题</h2>
+    <div class="faq-items">
+      <div class="faq-item">
+        <button class="faq-question">如何联系客服？</button>
+        <div class="faq-answer">
+          <p>您可以通过电话、邮箱或在线表单联系我们的客服团队。我们的客服人员将在工作时间内尽快回复您的咨询。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">产品的保修期限是多久？</button>
+        <div class="faq-answer">
+          <p>我们的产品保修期限为XX个月，具体以产品说明书为准。在保修期内，如产品出现质量问题，我们将提供免费维修或更换服务。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">如何申请售后服务？</button>
+        <div class="faq-answer">
+          <p>您可以通过客服电话或邮箱申请售后服务，我们的客服人员会为您安排专业的技术人员进行处理。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">是否提供定制服务？</button>
+        <div class="faq-answer">
+          <p>是的，我们提供定制服务。如果您有特殊需求，可以联系我们的销售团队，我们将根据您的需求提供个性化的解决方案。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

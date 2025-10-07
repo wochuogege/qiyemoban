@@ -1,0 +1,147 @@
+# 网站基本信息
+title: 公司名称
+email: contact@example.com
+description: >-
+  公司网站描述
+baseurl: ""
+url: "https://example.github.io" # 生产环境URL
+
+# 多语言配置
+languages:
+  - en
+  - zh
+
+# 默认语言
+default_lang: zh
+
+# 多语言名称
+lang_names:
+  zh: 中文
+  en: English
+
+# 导航菜单
+nav:
+  - title: home
+    url: /
+  - title: about
+    url: /about/
+  - title: products
+    url: /products/
+  - title: services
+    url: /services/
+  - title: contact
+    url: /contact/
+
+# 公司信息
+company:
+  name: 示例公司
+  slogan: 创新科技，引领未来
+  founded: 2010
+  employees: 100-200
+
+# 联系信息
+contact:
+  email: contact@example.com
+  phone: +86 123 4567 8910
+  address: 中国北京市朝阳区
+  map_url: "https://maps.google.com/"
+
+# 站点社交媒体链接
+social:
+  twitter: "https://twitter.com/"
+  facebook: "https://facebook.com/"
+  instagram: "https://instagram.com/"
+  linkedin: "https://linkedin.com/"
+  github: "https://github.com/"
+
+# 主题设置
+theme: minima
+
+# 自定义主题颜色
+colors:
+  primary: "#3498db"
+  secondary: "#2ecc71"
+  dark: "#2c3e50"
+  light: "#ecf0f1"
+
+# 构建配置
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: <!--more-->
+permalink: /:year/:month/:day/:title:output_ext
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# 多模板配置
+templates:
+  - home
+  - about
+  - products
+  - services
+  - contact
+
+# 排除的目录
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .gitignore
+  - README.md
+  - CNAME
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+
+# 包含的文件和目录
+include:
+  - .htaccess
+  - _pages
+  - _data
+  - _i18n
+  - assets
+
+# 插件配置
+plugins:
+  - jekyll-multiple-languages-plugin
+  - jekyll-data
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-feed
+
+# 自定义 collections（可以用于产品、服务等）
+collections:
+  products:
+    output: true
+    permalink: /products/:path/
+  services:
+    output: true
+    permalink: /services/:path/
+  team:
+    output: true
+    permalink: /team/:path/
+
+# 前端配置
+frontmatter_defaults:
+  posts:
+    layout: post
+  pages:
+    layout: page
+  products:
+    layout: product
+  services:
+    layout: service
+  team:
+    layout: team
+
+# 时间格式
+date_format: "%Y-%m-%d"
+
+# 压缩设置
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
