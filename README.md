@@ -25,11 +25,16 @@
 
 ## GitHub Pages兼容性
 
-本项目已针对GitHub Pages的默认环境进行了优化：
+本项目已针对GitHub Pages的默认环境进行了优化，使用与GitHub Pages完全一致的依赖版本：
 
 - **Jekyll版本**: 3.10.0
 - **Ruby版本**: 3.3.4
-- **依赖版本**: 使用GitHub Pages官方指定的版本
+- **关键依赖**: 
+  - kramdown 2.4.0
+  - kramdown-parser-gfm 1.1.0
+  - liquid 4.0.4
+  - rouge 3.30.0
+  - minima 2.5.1
 
 ### 部署到GitHub Pages
 

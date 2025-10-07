@@ -9,6 +9,8 @@ url: ""
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Exclude from processing.
 exclude:
@@ -34,3 +36,16 @@ highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+# SEO settings
+author: 企业网站
+twitter:
+  username: 
+logo: 
+
+# Sitemap settings
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
