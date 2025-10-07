@@ -34,7 +34,7 @@ class ThemeManager {
 
   // 从localStorage加载保存的主题
   loadThemeFromStorage() {
-    const savedTheme = localStorage.getItem('siteTheme');
+    const savedTheme = localStorage.getItem('selected-theme');
     return savedTheme && this.isValidTheme(savedTheme) ? savedTheme : 'default';
   }
 
@@ -75,7 +75,7 @@ class ThemeManager {
   // 设置事件监听器
   setupEventListeners() {
     // 主题切换按钮点击事件
-    const themeToggle = document.querySelector('.theme-switcher-toggle');
+    const themeToggle = document.querySelector('#theme-toggle, .theme-toggle-btn');
     if (themeToggle) {
       themeToggle.addEventListener('click', () => this.toggleThemeSwitcher());
     }
@@ -83,9 +83,10 @@ class ThemeManager {
     // 点击外部关闭主题切换面板
     document.addEventListener('click', (e) => {
       const themeSwitcher = document.querySelector('.theme-switcher');
-      const themeToggle = document.querySelector('.theme-switcher-toggle');
+      const themeToggle = document.querySelector('#theme-toggle, .theme-toggle-btn');
+      const themePanel = document.querySelector('.theme-panel');
 
-      if (themeSwitcher && themeToggle && 
+      if (themeSwitcher && themeToggle && themePanel && 
           !themeSwitcher.contains(e.target) && 
           e.target !== themeToggle) {
         this.closeThemeSwitcher();
@@ -93,13 +94,13 @@ class ThemeManager {
     });
 
     // 关闭按钮点击事件
-    const closeButton = document.querySelector('.theme-switcher-close');
+    const closeButton = document.querySelector('#close-theme-panel, .close-btn');
     if (closeButton) {
       closeButton.addEventListener('click', () => this.closeThemeSwitcher());
     }
 
     // 重置按钮点击事件
-    const resetButton = document.querySelector('.theme-switcher-reset');
+    const resetButton = document.querySelector('#reset-theme, .reset-btn');
     if (resetButton) {
       resetButton.addEventListener('click', () => {
         this.switchTheme('default');
@@ -107,10 +108,10 @@ class ThemeManager {
       });
     }
 
-    // 主题选项点击事件 - 适配新的HTML结构
+    // 主题选项点击事件 - 适配实际的HTML结构
     document.querySelectorAll('.theme-item').forEach(option => {
       option.addEventListener('click', (e) => {
-        const themeId = e.currentTarget.getAttribute('data-theme-id');
+        const themeId = e.currentTarget.getAttribute('data-theme');
         if (themeId) {
           this.switchTheme(themeId);
           this.closeThemeSwitcher();
@@ -132,22 +133,22 @@ class ThemeManager {
 
   // 将主题保存到localStorage
   saveThemeToStorage() {
-    localStorage.setItem('siteTheme', this.currentTheme);
+    localStorage.setItem('selected-theme', this.currentTheme);
   }
 
   // 切换主题切换器面板的显示/隐藏
   toggleThemeSwitcher() {
-    const themeSwitcher = document.querySelector('.theme-switcher');
-    if (themeSwitcher) {
-      themeSwitcher.classList.toggle('active');
+    const themePanel = document.querySelector('.theme-panel');
+    if (themePanel) {
+      themePanel.classList.toggle('active');
     }
   }
 
   // 关闭主题切换器面板
   closeThemeSwitcher() {
-    const themeSwitcher = document.querySelector('.theme-switcher');
-    if (themeSwitcher) {
-      themeSwitcher.classList.remove('active');
+    const themePanel = document.querySelector('.theme-panel');
+    if (themePanel) {
+      themePanel.classList.remove('active');
     }
   }
 
@@ -159,7 +160,7 @@ class ThemeManager {
     });
 
     // 标记当前主题为选中状态
-    const activeOption = document.querySelector(`.theme-item[data-theme-id="${this.currentTheme}"]`);
+    const activeOption = document.querySelector(`.theme-item[data-theme="${this.currentTheme}"]`);
     if (activeOption) {
       activeOption.classList.add('active');
     }
@@ -197,12 +198,8 @@ class ThemeManager {
 
 // 页面加载完成后初始化主题管理器
 window.addEventListener('DOMContentLoaded', () => {
-  // 检查是否有预渲染的主题切换器，如果没有则初始化
-  const themeSwitcher = document.querySelector('.theme-switcher');
-  if (themeSwitcher) {
-    // 初始化主题管理器
-    window.themeManager = new ThemeManager();
-  }
+  // 初始化主题管理器
+  window.themeManager = new ThemeManager();
 
   // 添加主题切换通知的样式
   const style = document.createElement('style');
@@ -243,7 +240,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // 添加页面滚动时的主题切换器位置调整
 window.addEventListener('scroll', () => {
-  const themeToggle = document.querySelector('.theme-switcher-toggle');
+  const themeToggle = document.querySelector('#theme-toggle, .theme-toggle-btn');
   if (themeToggle) {
     // 可以根据滚动位置调整主题切换按钮的样式或位置
     if (window.scrollY > 200) {

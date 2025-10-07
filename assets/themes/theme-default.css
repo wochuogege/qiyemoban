@@ -85,6 +85,6 @@ body.theme-default {
 }
 
 /* 主题切换器 */
-.theme-default .theme-switcher-toggle {
+.theme-default .theme-toggle-btn {
   background-color: var(--primary-color);
 }

@@ -671,7 +671,7 @@ body.theme-retro {
 }
 
 /* 主题切换器 */
-.theme-retro .theme-switcher-toggle {
+.theme-retro .theme-toggle-btn {
   background-color: var(--primary-color);
   color: white;
   width: 55px;
@@ -686,7 +686,7 @@ body.theme-retro {
   font-size: 1.4rem;
 }
 
-.theme-retro .theme-switcher-toggle:hover {
+.theme-retro .theme-toggle-btn:hover {
   background-color: var(--primary-dark);
   transform: scale(1.05);
 }

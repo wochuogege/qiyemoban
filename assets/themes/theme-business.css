@@ -315,7 +315,7 @@ body.theme-business {
 }
 
 /* 主题切换器 */
-.theme-business .theme-switcher-toggle {
+.theme-business .theme-toggle-btn {
   background-color: var(--primary-color);
   width: 48px;
   height: 48px;

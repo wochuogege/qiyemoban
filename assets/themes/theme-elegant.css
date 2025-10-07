@@ -566,7 +566,7 @@ body.theme-elegant {
 }
 
 /* 主题切换器 */
-.theme-elegant .theme-switcher-toggle {
+.theme-elegant .theme-toggle-btn {
   background: var(--gradient-primary);
   color: white;
   width: 50px;
@@ -580,7 +580,7 @@ body.theme-elegant {
   box-shadow: var(--shadow-md);
 }
 
-.theme-elegant .theme-switcher-toggle:hover {
+.theme-elegant .theme-toggle-btn:hover {
   transform: scale(1.1);
   box-shadow: var(--shadow-lg);
 }

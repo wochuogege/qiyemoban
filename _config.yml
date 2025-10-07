@@ -45,6 +45,8 @@ available_themes:
     name: 复古风格
   - id: warm
     name: 温暖柔和
+  - id: dark
+    name: 暗黑模式
 
 # 网站导航菜单
 menu:

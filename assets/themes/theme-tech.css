@@ -535,7 +535,7 @@ body.theme-tech::before {
 }
 
 /* 主题切换器 */
-.theme-tech .theme-switcher-toggle {
+.theme-tech .theme-toggle-btn {
   background: var(--gradient-primary);
   color: white;
   width: 50px;
@@ -550,7 +550,7 @@ body.theme-tech::before {
   z-index: 1000;
 }
 
-.theme-tech .theme-switcher-toggle:hover {
+.theme-tech .theme-toggle-btn:hover {
   transform: scale(1.1) rotate(15deg);
 }
 

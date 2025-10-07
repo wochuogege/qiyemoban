@@ -591,14 +591,16 @@ main {
 }
 
 /* 主题切换器样式 */
+/* 主题切换器 */
 .theme-switcher {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 999;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
 }
 
-.theme-switcher-toggle {
+.theme-toggle-btn {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -611,11 +613,11 @@ main {
   transition: all 0.3s ease;
 }
 
-.theme-switcher-toggle:hover {
+.theme-toggle-btn:hover {
   transform: scale(1.1);
 }
 
-.theme-switcher-panel {
+.theme-panel {
   position: absolute;
   bottom: 60px;
   right: 0;
@@ -627,11 +629,11 @@ main {
   display: none;
 }
 
-.theme-switcher-panel.active {
+.theme-panel.active {
   display: block;
 }
 
-.theme-switcher-panel h4 {
+.theme-panel h4 {
   margin-bottom: 15px;
   font-size: 1.1rem;
 }

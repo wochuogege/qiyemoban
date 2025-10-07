@@ -223,7 +223,7 @@ body.theme-modern {
 }
 
 /* 主题切换器 */
-.theme-modern .theme-switcher-toggle {
+.theme-modern .theme-toggle-btn {
   background-color: var(--primary-color);
   width: 55px;
   height: 55px;

@@ -670,7 +670,7 @@ body.theme-warm {
 }
 
 /* 主题切换器 */
-.theme-warm .theme-switcher-toggle {
+.theme-warm .theme-toggle-btn {
   background-color: var(--primary-color);
   color: white;
   width: 55px;
@@ -685,7 +685,7 @@ body.theme-warm {
   font-size: 1.4rem;
 }
 
-.theme-warm .theme-switcher-toggle:hover {
+.theme-warm .theme-toggle-btn:hover {
   background-color: var(--primary-dark);
   transform: scale(1.05);
 }

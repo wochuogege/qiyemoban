@@ -39,7 +39,7 @@
       </div>
       
       <!-- 主题切换器按钮 -->
-      <button class="theme-switcher-toggle" aria-label="切换主题">
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="切换主题">
         <i class="fas fa-palette"></i>
       </button>
     </div>
@@ -231,7 +231,7 @@
   }
   
   /* 主题切换器按钮 */
-  .theme-switcher-toggle {
+  .theme-toggle-btn {
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
     border-radius: 50%;
@@ -248,12 +248,12 @@
     z-index: 100;
   }
   
-  .theme-switcher-toggle:hover {
+  .theme-toggle-btn:hover {
     background-color: #e9ecef;
     transform: rotate(15deg);
   }
   
-  .theme-switcher-toggle i {
+  .theme-toggle-btn i {
     font-size: 1.2rem;
   }
   
@@ -299,7 +299,7 @@
       border-radius: 0.25rem;
     }
     
-    .theme-switcher-toggle {
+    .theme-toggle-btn {
       position: fixed;
       right: 20px;
       top: 20px;
@@ -376,13 +376,13 @@
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
   }
   
-  body.theme-dark .theme-switcher-toggle {
+  body.theme-dark .theme-toggle-btn {
     background-color: #333;
     border-color: #444;
     color: #b0b0b0;
   }
   
-  body.theme-dark .theme-switcher-toggle:hover {
+  body.theme-dark .theme-toggle-btn:hover {
     background-color: #444;
     color: #fff;
   }

@@ -606,7 +606,7 @@ body.theme-vibrant {
 }
 
 /* 主题切换器 */
-.theme-vibrant .theme-switcher-toggle {
+.theme-vibrant .theme-toggle-btn {
   background: var(--gradient-primary);
   color: white;
   width: 55px;
@@ -621,7 +621,7 @@ body.theme-vibrant {
   font-size: 1.4rem;
 }
 
-.theme-vibrant .theme-switcher-toggle:hover {
+.theme-vibrant .theme-toggle-btn:hover {
   transform: rotate(15deg) scale(1.1);
 }
 

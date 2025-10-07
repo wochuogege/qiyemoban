@@ -481,7 +481,7 @@ body.theme-nature {
 }
 
 /* 主题切换器 */
-.theme-nature .theme-switcher-toggle {
+.theme-nature .theme-toggle-btn {
   background-color: var(--primary-color);
   color: white;
   width: 50px;
@@ -495,7 +495,7 @@ body.theme-nature {
   transition: var(--transition);
 }
 
-.theme-nature .theme-switcher-toggle:hover {
+.theme-nature .theme-toggle-btn:hover {
   background-color: var(--primary-dark);
   transform: scale(1.1) rotate(15deg);
 }

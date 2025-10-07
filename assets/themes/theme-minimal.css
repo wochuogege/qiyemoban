@@ -439,7 +439,7 @@ body.theme-minimal {
 }
 
 /* 主题切换器 */
-.theme-minimal .theme-switcher-toggle {
+.theme-minimal .theme-toggle-btn {
   background-color: var(--primary-color);
   color: white;
   width: 45px;
@@ -453,12 +453,12 @@ body.theme-minimal {
   border: 0;
 }
 
-.theme-minimal .theme-switcher-toggle:hover {
+.theme-minimal .theme-toggle-btn:hover {
   transform: scale(1.1);
   background-color: var(--primary-dark);
 }
 
-.theme-minimal .theme-switcher-panel {
+.theme-minimal .theme-panel {
   background-color: white;
   border: 1px solid var(--border-color);
   padding: 20px;
