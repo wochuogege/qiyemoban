@@ -1,0 +1,208 @@
+---
+---
+
+// 默认样式
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// 模板1: 蓝色商务风格
+.template-blue {
+  .navbar {
+    background-color: #007bff !important;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  a {
+    color: #007bff;
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+}
+
+// 模板2: 绿色环保风格
+.template-green {
+  .navbar {
+    background-color: #28a745 !important;
+  }
+  
+  .btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  a {
+    color: #28a745;
+  }
+  
+  a:hover {
+    color: #1e7e34;
+  }
+}
+
+// 模板3: 红色热情风格
+.template-red {
+  .navbar {
+    background-color: #dc3545 !important;
+  }
+  
+  .btn-primary {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  a {
+    color: #dc3545;
+  }
+  
+  a:hover {
+    color: #bd2130;
+  }
+}
+
+// 模板4: 紫色创意风格
+.template-purple {
+  .navbar {
+    background-color: #6f42c1 !important;
+  }
+  
+  .btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+  }
+  
+  a {
+    color: #6f42c1;
+  }
+  
+  a:hover {
+    color: #5a32a3;
+  }
+}
+
+// 模板5: 橙色活力风格
+.template-orange {
+  .navbar {
+    background-color: #fd7e14 !important;
+  }
+  
+  .btn-primary {
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+  }
+  
+  a {
+    color: #fd7e14;
+  }
+  
+  a:hover {
+    color: #e96c00;
+  }
+}
+
+// 模板6: 灰色简约风格
+.template-gray {
+  .navbar {
+    background-color: #6c757d !important;
+  }
+  
+  .btn-primary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  a {
+    color: #6c757d;
+  }
+  
+  a:hover {
+    color: #545b62;
+  }
+}
+
+// 模板7: 黑色经典风格
+.template-black {
+  .navbar {
+    background-color: #000000 !important;
+  }
+  
+  .btn-primary {
+    background-color: #000000;
+    border-color: #000000;
+  }
+  
+  a {
+    color: #000000;
+  }
+  
+  a:hover {
+    color: #333333;
+  }
+}
+
+// 模板8: 粉色温馨风格
+.template-pink {
+  .navbar {
+    background-color: #e83e8c !important;
+  }
+  
+  .btn-primary {
+    background-color: #e83e8c;
+    border-color: #e83e8c;
+  }
+  
+  a {
+    color: #e83e8c;
+  }
+  
+  a:hover {
+    color: #d9277c;
+  }
+}
+
+// 模板9: 青色清新风格
+.template-cyan {
+  .navbar {
+    background-color: #17a2b8 !important;
+  }
+  
+  .btn-primary {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+  }
+  
+  a {
+    color: #17a2b8;
+  }
+  
+  a:hover {
+    color: #117a8b;
+  }
+}
+
+// 模板10: 黄色明亮风格
+.template-yellow {
+  .navbar {
+    background-color: #ffc107 !important;
+  }
+  
+  .btn-primary {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+  }
+  
+  a {
+    color: #ffc107;
+  }
+  
+  a:hover {
+    color: #d39e00;
+  }
+}

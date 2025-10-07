@@ -1,0 +1,31 @@
+<footer class="bg-dark text-light py-4 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>{{ site.title }}</h5>
+        <p>专业的服务，优质的产品</p>
+      </div>
+      <div class="col-md-3">
+        <h5>快速链接</h5>
+        <ul class="list-unstyled">
+          <li><a href="/" class="text-light">首页</a></li>
+          <li><a href="/about/" class="text-light">关于我们</a></li>
+          <li><a href="/services/" class="text-light">服务项目</a></li>
+          <li><a href="/contact/" class="text-light">联系我们</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>联系方式</h5>
+        <address>
+          <strong>地址:</strong> 某某街道123号<br>
+          <strong>电话:</strong> (123) 456-7890<br>
+          <strong>邮箱:</strong> info@example.com
+        </address>
+      </div>
+    </div>
+    <hr>
+    <div class="text-center">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. 版权所有.</p>
+    </div>
+  </div>
+</footer>

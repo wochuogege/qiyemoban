@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="container-fluid {{ page.template-class }}">
+  {% include carousel.html %}
+  
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+        
+        <h2>模板特色</h2>
+        <p>这是{{ page.template-name }}，具有以下特色：</p>
+        <ul>
+          <li>独特的配色方案</li>
+          <li>专业的排版设计</li>
+          <li>响应式布局适配各种设备</li>
+          <li>现代化的用户界面</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        {% include sidebar.html %}
+      </div>
+    </div>
+  </div>
+</div>
