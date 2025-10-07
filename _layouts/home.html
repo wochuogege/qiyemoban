@@ -4,11 +4,72 @@ layout: default
 
 {% include carousel.html %}
 
+<!-- 特色服务区块 -->
+<div class="features-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="display-4">我们的服务</h2>
+        <p class="lead">为您提供全方位的专业服务</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card text-center h-100">
+          <div class="card-body">
+            <div class="feature-icon">
+              <i class="bi bi-laptop"></i>
+            </div>
+            <h5 class="card-title">网站开发</h5>
+            <p class="card-text">专业的网站设计与开发服务，打造您的在线形象。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card text-center h-100">
+          <div class="card-body">
+            <div class="feature-icon">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h5 class="card-title">移动应用</h5>
+            <p class="card-text">开发iOS和Android移动应用程序，满足您的移动端需求。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card text-center h-100">
+          <div class="card-body">
+            <div class="feature-icon">
+              <i class="bi bi-graph-up"></i>
+            </div>
+            <h5 class="card-title">数字营销</h5>
+            <p class="card-text">全方位数字营销服务，提升您的品牌影响力。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 主要内容区块 -->
 <div class="container py-5">
   <div class="row">
     <div class="col-md-8">
-      <h1>{{ page.title }}</h1>
+      <h1 class="page-title">{{ page.title }}</h1>
       {{ content }}
+      
+      <div class="row mt-5">
+        <div class="col-12">
+          <h3>为什么选择我们？</h3>
+          <p>我们拥有丰富的行业经验和专业的技术团队，致力于为客户提供最优质的服务。</p>
+          <ul>
+            <li>10年以上的行业经验</li>
+            <li>专业的技术团队</li>
+            <li>完善的售后服务体系</li>
+            <li> competitive的价格优势</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="col-md-4">
       {% include sidebar.html %}

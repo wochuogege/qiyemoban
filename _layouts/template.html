@@ -2,26 +2,50 @@
 layout: default
 ---
 
-<div class="container-fluid {{ page.template-class }}">
-  {% include carousel.html %}
-  
-  <div class="container py-5">
+<div class="container-fluid {{ page.template-class }} py-5">
+  <div class="container">
     <div class="row">
-      <div class="col-md-8">
-        <h1>{{ page.title }}</h1>
-        {{ content }}
-        
-        <h2>模板特色</h2>
-        <p>这是{{ page.template-name }}，具有以下特色：</p>
-        <ul>
-          <li>独特的配色方案</li>
-          <li>专业的排版设计</li>
-          <li>响应式布局适配各种设备</li>
-          <li>现代化的用户界面</li>
-        </ul>
+      <div class="col-12">
+        <h1 class="page-title">{{ page.title }}</h1>
       </div>
-      <div class="col-md-4">
-        {% include sidebar.html %}
+    </div>
+  </div>
+</div>
+
+{% include carousel.html %}
+
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-8">
+      {{ content }}
+      
+      <div class="card mt-5">
+        <div class="card-header">
+          <h3><i class="bi bi-stars me-2"></i>模板特色</h3>
+        </div>
+        <div class="card-body">
+          <p>这是{{ page.template-name }}，具有以下特色：</p>
+          <ul>
+            <li>独特的配色方案</li>
+            <li>专业的排版设计</li>
+            <li>响应式布局适配各种设备</li>
+            <li>现代化的用户界面</li>
+            <li>易于定制和扩展</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      {% include sidebar.html %}
+      
+      <div class="card mt-4">
+        <div class="card-header">
+          <h5><i class="bi bi-palette me-2"></i>选择其他模板</h5>
+        </div>
+        <div class="card-body">
+          <p>不满意当前风格？查看其他模板：</p>
+          <a href="/templates/" class="btn btn-outline-primary">浏览所有模板</a>
+        </div>
       </div>
     </div>
   </div>
