@@ -10,7 +10,7 @@ plugins:
 
 # 主题选择（只需改这个数字 1-10 即可切换风格）
 # 1 classic，2 modern，3 dark，4 light，5 corporate，6 playful，7 elegant，8 tech，9 minimal，10 vintage
-theme_index: 2
+theme_index: 3
 # 若设为 true，将强制以 theme_index 为准，忽略 URL 参数与下拉菜单
 lock_theme_from_config: true
 
