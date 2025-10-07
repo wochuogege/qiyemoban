@@ -1,0 +1,42 @@
+/* 全局根据 body 的 layout-* 类控制结构变化 */
+body[class^="layout-"] .container { width: min(1100px, 92%); }
+
+/* 布局1：标准居中容器（默认） */
+body.layout-1 .container { width: min(1100px, 92%); }
+
+/* 布局2：更宽容器，减少留白 */
+body.layout-2 .container { width: min(1320px, 95%); }
+
+/* 布局3：左侧固定侧边栏 + 右侧内容 */
+body.layout-3 .page-frame { display: grid; grid-template-columns: 280px 1fr; gap: 20px; }
+body.layout-3 .sidebar { position: sticky; top: 76px; align-self: start; }
+
+/* 布局4：全宽内容（hero/轮播等撑满） */
+body.layout-4 .container { width: 100%; max-width: 100%; padding-left: 0; padding-right: 0; }
+body.layout-4 main.container { padding-left: 0; padding-right: 0; }
+
+/* 布局5：卡片化内容外框 */
+body.layout-5 .content-card { background: var(--card-bg); border:1px solid var(--border); border-radius: 16px; padding: 16px; box-shadow: var(--shadow); }
+
+/* 布局6：顶部双行导航（品牌与菜单分离） */
+body.layout-6 .navbar { display: grid; grid-template-columns: 1fr; }
+body.layout-6 .topbar { border-bottom: 1px solid var(--border); }
+body.layout-6 .navbar .nav-links { justify-content: center; }
+
+/* 布局7：内容左右留白更大，信息密度低 */
+body.layout-7 .container { width: min(960px, 88%); }
+
+/* 布局8：首屏强调（hero 更高） */
+body.layout-8 .hero { padding: 96px 0; }
+
+/* 布局9：内容两列瀑布卡片（简单版） */
+body.layout-9 .auto-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+@media (max-width: 900px) { body.layout-9 .auto-grid { grid-template-columns: 1fr; } }
+
+/* 布局10：极简扁平，无阴影、细边框 */
+body.layout-10 .card, body.layout-10 .content-card { box-shadow: none; border-color: #eaeaea; }
+body.layout-10 .btn { border-radius: 6px; }
+
+/* 侧边栏基础样式 */
+.sidebar { background: var(--card-bg); border:1px solid var(--border); border-radius: 12px; padding: 16px; }
+.sidebar .widget + .widget { margin-top: 12px; }

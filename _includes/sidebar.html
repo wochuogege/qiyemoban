@@ -1,0 +1,18 @@
+<aside class="sidebar">
+  <div class="widget">
+    <h4>快速联系</h4>
+    <p>电话：{{ site.company.phone }}<br>邮箱：{{ site.company.email }}</p>
+  </div>
+  <div class="widget">
+    <h4>热门链接</h4>
+    <ul>
+      {% for item in site.data.navigation limit:4 %}
+      <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="widget">
+    <h4>下载资料</h4>
+    <a class="btn" href="#">公司白皮书</a>
+  </div>
+</aside>
