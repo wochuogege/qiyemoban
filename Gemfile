@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# 主要Jekyll依赖
-gem 'jekyll', '~> 4.3.2'
-
 # GitHub Pages支持 - 使用兼容Ruby 3.1.7的版本
 gem 'github-pages', '~> 228', group: :jekyll_plugins
 
