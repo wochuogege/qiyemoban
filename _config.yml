@@ -21,6 +21,21 @@ permalink: /:year/:month/:day/:title/
 paginate: 5
 paginate_path: "/blog/page:num/"
 
+# 默认主题设置 - 可直接修改此值切换默认主题（1-12对应以下列表）
+# 1: default - 默认主题
+# 2: modern - 现代简约
+# 3: business - 商务专业
+# 4: creative - 创意设计
+# 5: nature - 清新自然
+# 6: minimal - 极简风格
+# 7: tech - 科技风格
+# 8: elegant - 优雅风格
+# 9: vibrant - 活力多彩
+# 10: retro - 复古风格
+# 11: warm - 温暖柔和
+# 12: dark - 暗黑模式
+theme_style: business
+
 # 可用主题列表 - 用于主题切换器
 available_themes:
   - id: default

@@ -70,6 +70,9 @@
   <script>
     // 页面加载完成后执行
     document.addEventListener('DOMContentLoaded', function() {
+      // 从Jekyll配置获取默认主题设置
+      window.themeStyle = '{{ site.theme_style }}';
+      
       // 初始化主题切换器
       if (typeof ThemeManager !== 'undefined') {
         const themeManager = new ThemeManager();

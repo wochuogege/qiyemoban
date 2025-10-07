@@ -34,8 +34,14 @@ class ThemeManager {
 
   // 从localStorage加载保存的主题
   loadThemeFromStorage() {
+    // 首先检查页面中是否有配置的默认主题
+    // 这个值会在页面加载时从Jekyll配置传递过来
+    const defaultThemeFromConfig = window.themeStyle || 'default';
+    
+    // 如果localStorage中没有保存过主题，使用配置文件中的默认主题
+    // 否则使用保存的主题
     const savedTheme = localStorage.getItem('selected-theme');
-    return savedTheme && this.isValidTheme(savedTheme) ? savedTheme : 'default';
+    return savedTheme && this.isValidTheme(savedTheme) ? savedTheme : defaultThemeFromConfig;
   }
 
   // 验证主题ID是否有效
